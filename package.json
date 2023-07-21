@@ -1,0 +1,29 @@
+{
+  "name": "ufuse",
+  "version": "1.0.0",
+  "description": "Vue Hooks and Components for UFrontend",
+  "private": true,
+  "packageManager": "pnpm@8.5.1",
+  "scripts": {
+    "postinstall": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.39.8",
+    "lint-staged": "^13.2.3",
+    "simple-git-hooks": "^2.8.1"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,vue,md}": [
+      "eslint --cache --fix"
+    ]
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  }
+}
