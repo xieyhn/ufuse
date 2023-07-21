@@ -20,13 +20,14 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",
+    "eslint": "^8.45.0",
     "lint-staged": "^13.2.3",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^5.1.6"
   },
   "peerDependencies": {
-    "vue": "^3.0.0",
-    "sass": "*"
+    "sass": "*",
+    "vue": "^3.0.0"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
