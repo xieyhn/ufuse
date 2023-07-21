@@ -7,13 +7,26 @@
   "scripts": {
     "postinstall": "simple-git-hooks"
   },
+  "exports": {
+    "./hooks": {
+      "import": "./packages/hooks/index.ts"
+    },
+    "./components": {
+      "import": "./packages/components/index.ts"
+    }
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",
     "lint-staged": "^13.2.3",
-    "simple-git-hooks": "^2.8.1"
+    "simple-git-hooks": "^2.8.1",
+    "typescript": "^5.1.6"
   },
   "peerDependencies": {
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "sass": "*"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
@@ -22,8 +35,5 @@
     "*.{js,ts,tsx,vue,md}": [
       "eslint --cache --fix"
     ]
-  },
-  "dependencies": {
-    "vue": "^3.3.4"
   }
 }
