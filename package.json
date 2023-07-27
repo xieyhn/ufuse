@@ -28,7 +28,8 @@
     }
   },
   "dependencies": {
-    "gsap": "*"
+    "gsap": "*",
+    "ufuse": "file:./"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",

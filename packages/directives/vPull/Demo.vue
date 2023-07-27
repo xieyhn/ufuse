@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import vPull from '.'
+import { vPull } from 'ufuse'
 
 const key = ref(Date.now())
 
