@@ -6,27 +6,36 @@
   "packageManager": "pnpm@8.5.1",
   "scripts": {
     "postinstall": "simple-git-hooks",
-    "docs:dev": "vitepress dev",
+    "docs:dev": "vitepress dev --port 8888",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
   },
   "exports": {
+    ".": {
+      "import": "./packages/index.ts"
+    },
     "./hooks": {
       "import": "./packages/hooks/index.ts"
     },
     "./components": {
       "import": "./packages/components/index.ts"
+    },
+    "./directives": {
+      "import": "./packages/directives/index.ts"
     }
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "gsap": "*"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",
     "@total-typescript/ts-reset": "^0.4.2",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
     "lint-staged": "^13.2.3",
+    "postcss": "^8.4.27",
     "simple-git-hooks": "^2.8.1",
+    "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",
     "vitepress": "1.0.0-beta.5"
   },

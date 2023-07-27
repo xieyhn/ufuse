@@ -4,8 +4,6 @@ import path from 'node:path'
 import { defineConfig } from 'vitepress'
 
 const pkgsPath = path.resolve(__dirname, '../packages')
-const hooksPath = path.resolve(pkgsPath, 'hooks')
-const componentsPath = path.resolve(pkgsPath, 'components')
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -14,34 +12,28 @@ export default defineConfig({
   srcDir: 'packages/',
   themeConfig: {
     sidebar: [
-      {
-        text: 'Hooks',
-        items: fs.readdirSync(hooksPath)
-          .map((name) => {
-            if (fs.statSync(path.resolve(hooksPath, name)).isDirectory()) {
-              return {
-                text: name,
-                link: `/hooks/${name}/`,
-              }
-            }
+      ...fs.readdirSync(pkgsPath)
+        .map((pkgName) => {
+          const pkgPath = path.resolve(pkgsPath, pkgName)
+          if (!fs.statSync(pkgPath).isDirectory())
             return null
-          })
-          .filter(Boolean),
-      },
-      {
-        text: 'Components',
-        items: fs.readdirSync(componentsPath)
-          .map((name) => {
-            if (fs.statSync(path.resolve(componentsPath, name)).isDirectory()) {
-              return {
-                text: name,
-                link: `/components/${name}/`,
-              }
-            }
-            return null
-          })
-          .filter(Boolean),
-      },
+
+          return {
+            text: pkgName.slice(0, 1).toUpperCase() + pkgName.slice(1),
+            items: fs.readdirSync(pkgPath)
+              .map((name) => {
+                if (fs.statSync(path.resolve(pkgPath, name)).isDirectory()) {
+                  return {
+                    text: name,
+                    link: `/${pkgName}/${name}/`,
+                  }
+                }
+                return null
+              })
+              .filter(Boolean),
+          }
+        })
+        .filter(Boolean),
     ],
   },
 })

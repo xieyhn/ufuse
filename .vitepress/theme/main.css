@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --demo-block-bg: rgba(125,125,125,.04);
+}
+
+.dark {
+  --demo-block-bg: var(--vp-code-block-bg);
+}
+
+.demo {
+  @apply p-6;
+  border-radius: 8px;
+  background-color: var( --demo-block-bg);
+}
+
+.demo button {
+  padding: 3px 15px;
+  background-color: var(--vp-c-brand);
+  border: none;
+  outline: none;
+  color: #fff;
+  margin: 0.5rem 0;
+  border-bottom: 2px solid var(--vp-c-brand-dark);
+  text-shadow: 1px 1px 1px var(--vp-c-brand-dark);
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
