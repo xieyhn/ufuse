@@ -41,9 +41,6 @@ importers:
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
-      ufuse:
-        specifier: file:./
-        version: file:(sass@0.4.0)(vue@3.3.4)
       vitepress:
         specifier: 1.0.0-beta.5
         version: 1.0.0-beta.5(@algolia/client-search@4.19.1)(sass@0.4.0)(search-insights@2.7.0)
@@ -2114,6 +2111,7 @@ packages:
 
   /gsap@3.12.2:
     resolution: {integrity: sha512-EkYnpG8qHgYBFAwsgsGEqvT1WUidX0tt/ijepx7z8EUJHElykg91RvW1XbkT59T0gZzzszOpjQv7SE41XuIXyQ==}
+    dev: false
 
   /has-flag@3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
@@ -3487,19 +3485,4 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-    dev: true
-
-  file:(sass@0.4.0)(vue@3.3.4):
-    resolution: {directory: '', type: directory}
-    id: 'file:'
-    name: ufuse
-    version: 1.0.0
-    requiresBuild: true
-    peerDependencies:
-      sass: '*'
-      vue: ^3.0.0
-    dependencies:
-      gsap: 3.12.2
-      sass: 0.4.0
-      vue: 3.3.4
     dev: true

@@ -10,6 +10,13 @@ export default defineConfig({
   title: 'UFUse',
   description: 'Vue Hooks and Components for UFrontend',
   srcDir: 'packages/',
+  vite: {
+    resolve: {
+      alias: {
+        ufuse: path.resolve(__dirname, '../packages/index'),
+      },
+    },
+  },
   themeConfig: {
     sidebar: [
       ...fs.readdirSync(pkgsPath)
