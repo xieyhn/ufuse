@@ -22,6 +22,9 @@
     },
     "./directives": {
       "import": "./packages/directives/index.ts"
+    },
+    "./css/reset.css": {
+      "import": "./packages/css/reset/index.css"
     }
   },
   "dependencies": {
