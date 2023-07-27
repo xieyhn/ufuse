@@ -11,7 +11,7 @@ UFUse 是一个代码仓库，而不是托管在 npmjs.com 上的一个包，这
 ```json
 {
   "dependencies": {
-    "ufuse": "http://192.168.0.41/xieyuhang/ufuse.git"
+    "ufuse": "git+http://192.168.0.41/xieyuhang/ufuse.git"
   }
 }
 ```

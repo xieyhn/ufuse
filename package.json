@@ -28,8 +28,7 @@
     }
   },
   "dependencies": {
-    "gsap": "*",
-    "ufuse": "file:./"
+    "gsap": "*"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",
@@ -41,7 +40,8 @@
     "simple-git-hooks": "^2.8.1",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",
-    "vitepress": "1.0.0-beta.5"
+    "vitepress": "1.0.0-beta.5",
+    "ufuse": "file:./"
   },
   "peerDependencies": {
     "sass": "*",
