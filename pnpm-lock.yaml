@@ -7,6 +7,9 @@ importers:
       gsap:
         specifier: '*'
         version: 3.12.2
+      lottie-web:
+        specifier: ^5.12.2
+        version: 5.12.2
       sass:
         specifier: '*'
         version: 0.4.0
@@ -43,7 +46,7 @@ importers:
         version: 5.1.6
       vitepress:
         specifier: 1.0.0-beta.5
-        version: 1.0.0-beta.5(@algolia/client-search@4.19.1)(sass@0.4.0)(search-insights@2.7.0)
+        version: 1.0.0-beta.5(@algolia/client-search@4.19.1)(search-insights@2.7.0)
 
 packages:
 
@@ -906,7 +909,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.0-beta.3(sass@0.4.0)
+      vite: 4.4.0-beta.3
       vue: 3.3.4
     dev: true
 
@@ -2415,6 +2418,10 @@ packages:
       wrap-ansi: 6.2.0
     dev: true
 
+  /lottie-web@5.12.2:
+    resolution: {integrity: sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==}
+    dev: false
+
   /lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
@@ -2940,6 +2947,7 @@ packages:
 
   /sass@0.4.0:
     resolution: {integrity: sha512-IfEhs55pmnOBKI8e4vosJT30H6liImRDwAyuqYQ5haYJzuqEM3oqLgntqBnlBhe7uQidsbBLuxu/frTIHt5oAQ==}
+    dev: false
 
   /search-insights@2.7.0:
     resolution: {integrity: sha512-GLbVaGgzYEKMvuJbHRhLi1qoBFnjXZGZ6l4LxOYPCp4lI2jDRB3jPU9/XNhMwv6kvnA9slTreq6pvK+b3o3aqg==}
@@ -3299,7 +3307,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite@4.4.0-beta.3(sass@0.4.0):
+  /vite@4.4.0-beta.3:
     resolution: {integrity: sha512-IC/thYTvArOFRJ4qvvudnu4KKZOVc+gduS3I9OfC5SbP/Rf4kkP7z6Of2QpKeOSVqwIK24khW6VOUmVD/0yzSQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3330,12 +3338,11 @@ packages:
       esbuild: 0.18.15
       postcss: 8.4.27
       rollup: 3.26.3
-      sass: 0.4.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress@1.0.0-beta.5(@algolia/client-search@4.19.1)(sass@0.4.0)(search-insights@2.7.0):
+  /vitepress@1.0.0-beta.5(@algolia/client-search@4.19.1)(search-insights@2.7.0):
     resolution: {integrity: sha512-/RjqqRsSEKkzF6HhK5e5Ij+bZ7ETb9jNCRRgIMm10gJ+ZLC3D1OqkE465lEqCeJUgt2HZ6jmWjDqIBfrJSpv7w==}
     hasBin: true
     dependencies:
@@ -3350,7 +3357,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.1.0
       shiki: 0.14.3
-      vite: 4.4.0-beta.3(sass@0.4.0)
+      vite: 4.4.0-beta.3
       vue: 3.3.4
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -3370,7 +3377,6 @@ packages:
       - qrcode
       - react
       - react-dom
-      - sass
       - search-insights
       - sortablejs
       - stylus

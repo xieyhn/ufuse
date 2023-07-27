@@ -1,1 +1,1 @@
-export { default as Example } from './Example/index.vue'
+export { default as LottieView } from './LottieView/index.vue'
