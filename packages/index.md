@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "UFUse"
-  text: "Vue Hooks and Components for UFrontend"
+  text: "前端开发工具集"
   actions:
     - theme: brand
       text: Get Started

@@ -8,7 +8,7 @@ const pkgsPath = path.resolve(__dirname, '../packages')
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'UFUse',
-  description: 'Vue Hooks and Components for UFrontend',
+  description: '前端开发工具集',
   srcDir: 'packages/',
   vite: {
     resolve: {
