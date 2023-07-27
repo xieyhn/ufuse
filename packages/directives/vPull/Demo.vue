@@ -3,15 +3,11 @@ import { ref } from 'vue'
 import { vPull } from 'ufuse'
 
 const key = ref(Date.now())
-
-function reRender() {
-  key.value = Date.now()
-}
 </script>
 
 <template>
   <div class="demo">
-    <button @click="reRender">
+    <button @click="key = Date.now()">
       重新渲染
     </button>
     <br>

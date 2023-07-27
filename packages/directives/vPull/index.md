@@ -7,9 +7,9 @@ import Demo from './Demo.vue'
 v-pull 指令可以实现一个擦拭动画效果。
 
 ::: tip
-v-pull 需要安装以下依赖：
+需要安装以下依赖：
 
-+ GSAP
++ gsap
 :::
 
 ## 使用

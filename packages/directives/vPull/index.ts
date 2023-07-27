@@ -6,7 +6,7 @@ const TweenKey = Symbol('v-pull.tween-key')
 
 const vPull: Directive<HTMLElement, VPullOptions> = {
   mounted(el, binding) {
-    const { delay, direction = 'l2r', duration = 1 } = binding.value ?? {}
+    const { delay, direction = 'l2r', duration = 1000 } = binding.value ?? {}
 
     gsap.set(el, {
       maskImage: 'linear-gradient(90deg, #000, #000)',
@@ -36,8 +36,8 @@ const vPull: Directive<HTMLElement, VPullOptions> = {
         },
         {
           maskPosition: '0px 0px',
-          duration,
-          delay,
+          duration: duration / 1000,
+          delay: delay && delay / 1000,
         },
       ),
     })
