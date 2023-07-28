@@ -1,6 +1,6 @@
 # 开发说明
 
-本文档通过 [vitepress](https://vitepress.dev/) 搭建，它的官方文档指出了它支持的 Markdown 语法。
+本文档通过 [vitepress](https://vitepress.dev/) 搭建，官方文档描述了支持的 Markdown 语法。
 
 ## 如何贡献
 
