@@ -7,5 +7,5 @@ hero:
   text: "前端开发工具集"
   actions:
     - theme: brand
-      text: Get Started
+      text: 开始使用
       link: /get-started
