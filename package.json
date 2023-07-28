@@ -14,15 +14,6 @@
     ".": {
       "import": "./packages/index.ts"
     },
-    "./hooks": {
-      "import": "./packages/hooks/index.ts"
-    },
-    "./components": {
-      "import": "./packages/components/index.ts"
-    },
-    "./directives": {
-      "import": "./packages/directives/index.ts"
-    },
     "./css/reset.css": {
       "import": "./packages/css/reset/index.css"
     }
