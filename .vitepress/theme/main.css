@@ -11,7 +11,7 @@
 }
 
 .demo {
-  @apply p-6;
+  @apply p-6 my-4;
   border-radius: 8px;
   background-color: var( --demo-block-bg);
 }

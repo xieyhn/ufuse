@@ -35,6 +35,7 @@
     "@antfu/eslint-config": "^0.39.8",
     "@total-typescript/ts-reset": "^0.4.2",
     "autoprefixer": "^10.4.14",
+    "axios": "^1.4.0",
     "eslint": "^8.45.0",
     "lint-staged": "^13.2.3",
     "postcss": "^8.4.27",
