@@ -2,6 +2,8 @@
 
 本文档通过 [vitepress](https://vitepress.dev/) 搭建，官方文档描述了支持的 Markdown 语法。
 
+[[toc]]
+
 ## 如何贡献
 
 ### 如何新增一个组件？
@@ -12,6 +14,7 @@
 4. 通常在组件目录中还会新增一个 `Demo.vue` 文件，作为组件的示例文件，并在 `index.md` 中引入。
 5. 通常在组件目录中还会新增一个 `types.ts` 文件来存放各种类型定义，可以给业务逻辑使用的同时，也可在 `index.md` 中引入，以便使用者在文档中可直接查看类型定义而省去了编写 API 文档的工作。
 6. 在 `packages/components/index.ts` 中新增组件的导出。
+7. 在 `test/index.test.ts` 中新增组件的测试用例。
 
 ### 如何提交你的改动？
 
@@ -42,6 +45,7 @@
 
 ## 开发约定
 
++ 尽量保证不出现单词拼写错误（可以使用 VSCode Code Spell Checker 插件）。
 + 尽量符合项目的代码编写规范（通过 eslint）。
 + 尽量保证组件、指令、Hooks 等的可复用性及可扩展性。
 + 在 API 设计时，尽可能保证参数名称的语义化，可参考 Vue、Element UI、VueUse 等的 API 设计。
