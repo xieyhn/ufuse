@@ -6,23 +6,13 @@ UFUse 是一个代码仓库，而不是托管在 npmjs.com 上的一个包（同
 
 ## 安装
 
-在 package.json 中添加依赖：
-
-```json
-{
-  "dependencies": {
-    "ufuse": "git+http://192.168.0.41/xieyuhang/ufuse.git"
-  }
-}
-```
-
-通过使用的包管理器按照项目依赖，如使用 pnpm：
+以 pnpm 为例，可以通过以下命令安装 UFUse：
 
 ```bash
-pnpm install
+pnpm install git+http://192.168.0.41/xieyuhang/ufuse.git
 ```
 
-或是在后面的时间中，UFUse 发生了更新，以 pnpm 为例可以通过以下命令更新依赖：
+或是在后面的使用中，UFUse 发生了更新，以 pnpm 为例可以通过以下命令更新依赖：
 
 ```bash
 pnpm update ufuse
