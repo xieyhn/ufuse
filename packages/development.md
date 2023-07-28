@@ -11,6 +11,7 @@
 3. 在组件目录中新增一个 `index.md` 文件，作为组件的说明文档。
 4. 通常在组件目录中还会新增一个 `Demo.vue` 文件，作为组件的示例文件，并在 `index.md` 中引入。
 5. 通常在组件目录中还会新增一个 `types.ts` 文件来存放各种类型定义，可以给业务逻辑使用的同时，也可在 `index.md` 中引入，以便使用者在文档中可直接查看类型定义而省去了编写 API 文档的工作。
+6. 在 `packages/components/index.ts` 中新增组件的导出。
 
 ### 如何提交你的改动？
 
@@ -32,10 +33,10 @@
 
 #### 怎么样发起一个 Pull Request？
 
-1. 在你的分支上完成开发后，将你的分支推送到远程仓库。
-2. 在 Gitlab 仓库点击 `Merge Request` - `New merge request` 按钮。
+1. 在你的分支上完成开发后，将该分支推送到远程仓库。
+2. 在 UFUse 的 Gitlab 仓库点击 `Merge Request` - `New merge request` 按钮。
 3. 左边选择你的分支，右边选择 main 分支。
-4. 点击 `Compare branches and continue` 按钮，并在这一步可以自测一下修改的文件内容是否正确，如是否有没有删除的测试代码等。
+4. 点击 `Compare branches and continue` 按钮，并在这一步可以自测一下修改的文件内容是否正确，如是否有还未删除的测试代码等。
 5. 点击 `Submit merge request` 按钮。
 6. 等待你的分支被确认并被合并进 main 分支。
 
@@ -48,3 +49,32 @@
 + 组件的目录名、文件名、组件名均使用大驼峰命名法（除目录下的 index.vue 外）。
 + Vue 指令目录使用小驼峰命名法。
 + Vue Hooks 目录使用小驼峰命名法。
+
+### ESLint
+
+项目使用 [ESLint](https://eslint.org/) 作为代码规范检查工具，配置文件为 `.eslintrc`，建议在开发时使用 VSCode 并安装 ESLint 插件，该插件可以实时检查代码规范并给出提示。
+
+也可以添加以下配置到 VSCode 的 `settings.json` 中，以便在文件保存时自动修复一些简单的规范问题：
+
+```json
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
+
+### tailwindcss
+
+项目使用 [tailwindcss](https://tailwindcss.com/) 作为 CSS 框架，配置文件为 `tailwind.config.js`，建议在开发时使用 VSCode 并安装 Tailwind CSS IntelliSense 插件，该插件可以实时提示 tailwindcss 的类名。
+
+::: warning
+注意这只应该使用在跟文档编写工作相关的 css 上，如 Demo 组件中的 css
+
+而不应该在实际对外暴露的组件的 css 中使用，因为在你的宿主项目中不一定安装了 tailwindcss，这样会导致你的组件在宿主项目中无法正常使用。
+:::
+
+### Scss
+
+Vue 组件中可以直接使用 scss 语法。
