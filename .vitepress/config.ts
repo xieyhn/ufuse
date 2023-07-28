@@ -29,7 +29,7 @@ export default defineConfig({
     ],
     nav: [
       { text: '开始使用', link: '/get-started.md' },
-      { text: '开发说明', link: '/development.md' },
+      { text: '参与开发', link: '/development.md' },
     ],
     sidebar: [
       ...fs.readdirSync(pkgsPath)
