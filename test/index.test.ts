@@ -14,5 +14,6 @@ describe('ufuse', () => {
 
     // utils
     expect(ufuse.combine).toBeDefined()
+    expect(ufuse.toNumber).toBeDefined()
   })
 })
