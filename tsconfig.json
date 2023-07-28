@@ -23,6 +23,7 @@
   },
   "include": [
     ".vitepress/**/*.ts",
+    "test/**/*.ts",
     "packages/**/*.ts", 
     "packages/**/*.d.ts", 
     "packages/**/*.vue"
