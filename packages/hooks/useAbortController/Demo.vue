@@ -26,6 +26,7 @@ watch(keyword, () => {
       if (signal.aborted) {
         // eslint-disable-next-line no-console
         console.log('aborted')
+        return
       }
       // eslint-disable-next-line no-console
       console.log(result)
