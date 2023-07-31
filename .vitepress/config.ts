@@ -2,6 +2,7 @@ import '@total-typescript/ts-reset'
 import fs from 'node:fs'
 import path from 'node:path'
 import { defineConfig } from 'vitepress'
+import { MarkdownTransform } from './plugins/MarkdownTransform'
 
 const pkgsPath = path.resolve(__dirname, '../packages')
 
@@ -16,6 +17,9 @@ export default defineConfig({
         ufuse: path.resolve(__dirname, '../packages/index'),
       },
     },
+    plugins: [
+      MarkdownTransform() as any,
+    ],
   },
   themeConfig: {
     lastUpdated: {
