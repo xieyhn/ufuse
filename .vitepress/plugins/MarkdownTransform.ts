@@ -9,7 +9,7 @@ export function MarkdownTransform(): Plugin {
     name: 'ufuse:markdown-transform',
     enforce: 'pre',
     async transform(raw, id) {
-      if (!id.match(/\.md\b/))
+      if (!/\.md$/.test(id) || id.endsWith('packages/index.md'))
         return null
 
       let file = id
