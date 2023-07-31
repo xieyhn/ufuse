@@ -17,5 +17,7 @@ describe('ufuse', () => {
     expect(ufuse.combine).toBeDefined()
     expect(ufuse.toNumber).toBeDefined()
     expect(ufuse.formatNumber).toBeDefined()
+    expect(ufuse.ensureArray).toBeDefined()
+    expect(ufuse.preloadAssets).toBeDefined()
   })
 })
