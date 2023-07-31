@@ -1,6 +1,7 @@
 import path from 'node:path'
 import type { Plugin } from 'vite'
 import { simpleGit } from 'simple-git'
+import md5 from 'md5'
 
 const git = simpleGit()
 
@@ -23,12 +24,13 @@ export function MarkdownTransform(): Plugin {
         file,
       })
 
-      const contributors: Array<{ name: string }> = []
+      const contributors: Array<{ name: string; hash: string }> = []
 
       all.forEach((item) => {
         if (!contributors.find(contributor => contributor.name === item.author_name)) {
           contributors.push({
             name: item.author_name,
+            hash: md5(item.author_email),
           })
         }
       })
@@ -37,7 +39,7 @@ export function MarkdownTransform(): Plugin {
 
 ## 贡献者
 
-<Contributors contributors="${contributors.map(item => `${item.name}`).join(';')}" />`
+<Contributors contributors="${contributors.map(item => `${item.name},${item.hash}`).join(';')}" />`
 
       return raw
     },
