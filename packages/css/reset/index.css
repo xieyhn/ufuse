@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -12,6 +13,11 @@ button {
   background-color: transparent;
   outline: none;
   border: none;
+}
+
+input{
+  border-radius: 0;
+  -webkit-appearance: none;
 }
 
 ul,
