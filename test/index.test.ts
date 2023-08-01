@@ -6,6 +6,7 @@ describe('ufuse', () => {
     // components
     expect(ufuse.LottieView).toBeDefined()
     expect(ufuse.FadeTransition).toBeDefined()
+    expect(ufuse.DNumber).toBeDefined()
 
     // directives
     expect(ufuse.vPull).toBeDefined()
