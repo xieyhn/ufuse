@@ -5,11 +5,15 @@ import { defineConfig } from 'vitepress'
 import { MarkdownTransform } from './plugins/MarkdownTransform'
 
 const pkgsPath = path.resolve(__dirname, '../packages')
+const ignorePkgs = ['public']
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'UFUse',
   description: '前端开发工具集',
+  head: [
+    ['link', { rel: 'icon', type: 'image/ico', href: '/favicon.ico' }],
+  ],
   srcDir: 'packages/',
   vite: {
     resolve: {
@@ -22,6 +26,7 @@ export default defineConfig({
     ],
   },
   themeConfig: {
+    logo: '/logo.png',
     lastUpdated: {
       text: '最后一次文档更新',
     },
@@ -38,7 +43,11 @@ export default defineConfig({
     sidebar: [
       ...fs.readdirSync(pkgsPath)
         .map((pkgName) => {
+          if (ignorePkgs.includes(pkgName))
+            return null
+
           const pkgPath = path.resolve(pkgsPath, pkgName)
+
           if (!fs.statSync(pkgPath).isDirectory())
             return null
 
