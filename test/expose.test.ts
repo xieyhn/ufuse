@@ -2,11 +2,12 @@ import * as ufuse from 'ufuse'
 import { describe, expect, it } from 'vitest'
 
 describe('ufuse', () => {
-  it('正确的导出', () => {
+  it('expose', () => {
     // components
     expect(ufuse.LottieView).toBeDefined()
     expect(ufuse.FadeTransition).toBeDefined()
     expect(ufuse.DNumber).toBeDefined()
+    expect(ufuse.SplineView).toBeDefined()
 
     // directives
     expect(ufuse.vPull).toBeDefined()
@@ -20,5 +21,6 @@ describe('ufuse', () => {
     expect(ufuse.formatNumber).toBeDefined()
     expect(ufuse.ensureArray).toBeDefined()
     expect(ufuse.preloadAssets).toBeDefined()
+    expect(ufuse.createPromise).toBeDefined()
   })
 })

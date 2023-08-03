@@ -20,8 +20,9 @@
     }
   },
   "dependencies": {
-    "gsap": "*",
-    "lottie-web": "*"
+    "@splinetool/runtime": "^0.9.411",
+    "gsap": "^3.12.2",
+    "lottie-web": "^5.12.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",
