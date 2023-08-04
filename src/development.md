@@ -8,12 +8,12 @@
 
 ### 如何新增一个组件
 
-1. 在 packages/components 目录中新增一个组件目录，例如 `packages/components/MyComponent`。
+1. 在 src/components 目录中新增一个组件目录，例如 `src/components/MyComponent`。
 2. 在组件目录中新增一个 `index.vue` 文件，作为组件的入口文件。
 3. 在组件目录中新增一个 `index.md` 文件，作为组件的说明文档，在该文件中来介绍组件的使用方法、参数说明、示例代码等。
 4. 通常在组件目录中还会新增一个 `Demo.vue` 文件，作为组件的示例文件，并在 `index.md` 中引入。
 5. 通常在组件目录中还会新增一个 `types.ts` 文件来存放各种类型定义，在给业务逻辑使用的同时，也可在 `index.md` 中引入，以便使用者在文档中可直接查看类型定义而省去了编写 API 文档的工作。
-6. 在 `packages/components/index.ts` 中新增组件的导出。
+6. 在 `src/components/index.ts` 中新增组件的导出。
 7. 在 `test/index.test.ts` 中新增确保可以访问到组件的测试用例。
 
 ### 如何提交你的改动
@@ -90,4 +90,4 @@ Vue 组件中可以直接使用 scss 语法。
 项目使用 [vitest](https://vitest.dev/) 作为测试框架，配置文件为 `vite.config.ts`，通过 `pnpm run test` 命令来运行测试。
 
 + `test/index.test.ts` 中编写最简单的测试用例，以保证你的功能可以被正确引入。
-+ `packages/utils` 中的方法应该编写对应的测试用例，以保证方法的正确性，这样也可以直接将测试用例放在对应的文档上省去了写示例的工作。
++ `src/utils` 中的方法应该编写对应的测试用例，以保证方法的正确性，这样也可以直接将测试用例放在对应的文档上省去了写示例的工作。

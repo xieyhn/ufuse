@@ -13,10 +13,10 @@
   },
   "exports": {
     ".": {
-      "import": "./packages/index.ts"
+      "import": "./src/index.ts"
     },
     "./css/reset.css": {
-      "import": "./packages/css/reset/index.css"
+      "import": "./src/css/reset/index.css"
     }
   },
   "dependencies": {

@@ -24,8 +24,8 @@
   "include": [
     ".vitepress/**/*.ts",
     "test/**/*.ts",
-    "packages/**/*.ts", 
-    "packages/**/*.d.ts", 
-    "packages/**/*.vue"
+    "src/**/*.ts", 
+    "src/**/*.d.ts", 
+    "src/**/*.vue"
   ]
 }

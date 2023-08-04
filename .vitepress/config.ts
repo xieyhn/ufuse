@@ -4,7 +4,7 @@ import path from 'node:path'
 import { defineConfig } from 'vitepress'
 import { MarkdownTransform } from './plugins/MarkdownTransform'
 
-const pkgsPath = path.resolve(__dirname, '../packages')
+const pkgsPath = path.resolve(__dirname, '../src')
 const ignorePkgs = ['public']
 
 // https://vitepress.dev/reference/site-config
@@ -14,11 +14,11 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', type: 'image/ico', href: '/favicon.ico' }],
   ],
-  srcDir: 'packages/',
+  srcDir: 'src/',
   vite: {
     resolve: {
       alias: {
-        ufuse: path.resolve(__dirname, '../packages/index'),
+        ufuse: path.resolve(__dirname, '../src/index'),
       },
     },
     plugins: [
