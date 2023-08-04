@@ -26,6 +26,7 @@ onMounted(async () => {
   <div
     class="demo"
     @wheel.prevent
+    @touchmove.prevent
   >
     <div class="w-full h-[300px]">
       <SplineView
