@@ -89,5 +89,5 @@ Vue 组件中可以直接使用 scss 语法。
 
 项目使用 [vitest](https://vitest.dev/) 作为测试框架，配置文件为 `vite.config.ts`，通过 `pnpm run test` 命令来运行测试。
 
-+ `test/index.test.ts` 中编写最简单的测试用例，以保证你的功能可以被正确引入。
++ `test/expose.test.ts` 中编写最简单的测试用例，以保证你的功能可以被正确引入。
 + `src/utils` 中的方法应该编写对应的测试用例，以保证方法的正确性，这样也可以直接将测试用例放在对应的文档上省去了写示例的工作。
