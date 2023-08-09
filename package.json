@@ -8,13 +8,12 @@
   "scripts": {
     "prepare": "simple-git-hooks",
     "test": "vitest",
-    "build": "node scripts/build.js",
     "docs:dev": "vitepress dev --port 8888",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
   },
   "files": [
-    "src/"
+    "src/**/*.{!(md,splinecode)}"
   ],
   "exports": {
     ".": {
