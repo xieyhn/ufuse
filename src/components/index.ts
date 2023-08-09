@@ -8,3 +8,6 @@ export * from './DNumber/types'
 
 export { default as SplineView } from './SplineView/index.vue'
 export * from './SplineView/types'
+
+export { default as EyeCryptButton } from './EyeCryptButton/index.vue'
+export * from './EyeCryptButton/types'

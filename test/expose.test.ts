@@ -8,6 +8,7 @@ describe('ufuse', () => {
     expect(ufuse.FadeTransition).toBeDefined()
     expect(ufuse.DNumber).toBeDefined()
     expect(ufuse.SplineView).toBeDefined()
+    expect(ufuse.EyeCryptButton).toBeDefined()
 
     // directives
     expect(ufuse.vPull).toBeDefined()
