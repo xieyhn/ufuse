@@ -17,7 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "ufuse": [
-        "."
+        "./src/index.ts"
       ]
     }
   },

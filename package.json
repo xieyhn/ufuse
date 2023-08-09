@@ -4,13 +4,18 @@
   "description": "Vue Hooks and Components for UFrontend",
   "private": true,
   "packageManager": "pnpm@8.5.1",
+  "type": "module",
   "scripts": {
     "prepare": "simple-git-hooks",
     "test": "vitest",
+    "build": "node scripts/build.js",
     "docs:dev": "vitepress dev --port 8888",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
   },
+  "files": [
+    "src/"
+  ],
   "exports": {
     ".": {
       "import": "./src/index.ts"
