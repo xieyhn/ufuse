@@ -13,7 +13,7 @@
     "docs:preview": "vitepress preview"
   },
   "files": [
-    "src/**/*.{!(md,splinecode)}"
+    "src/"
   ],
   "exports": {
     ".": {
