@@ -13,6 +13,7 @@ function runAnimation() {
   animation = Lottie.loadAnimation({
     container: container.value!,
     animationData: props.data,
+    path: props.path,
     loop: props.loop ?? false,
     autoplay: true,
     renderer: props.renderer ?? 'svg',

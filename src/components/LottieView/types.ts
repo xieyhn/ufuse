@@ -1,8 +1,12 @@
 export interface LottieViewProps {
   /**
-   * 动画数据
+   * 动画数据，与 path 之间需提供一个
    */
-  data: any
+  data?: any
+  /**
+   * 动画数据远程路径，与 data 之间需提供一个
+   */
+  path?: string
   /**
    * @default 'svg'
    */
