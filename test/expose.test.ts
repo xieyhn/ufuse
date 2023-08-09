@@ -12,6 +12,7 @@ describe('ufuse', () => {
 
     // directives
     expect(ufuse.vPull).toBeDefined()
+    expect(ufuse.vCompactFit).toBeDefined()
 
     // hooks
     expect(ufuse.useAbortController).toBeDefined()
