@@ -14,7 +14,6 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', type: 'image/ico', href: '/favicon.ico' }],
   ],
-  srcDir: 'src/',
   vite: {
     resolve: {
       alias: {
@@ -61,7 +60,7 @@ export default defineConfig({
                 if (fs.statSync(path.resolve(pkgPath, name)).isDirectory()) {
                   return {
                     text: name,
-                    link: `/${pkgName}/${name}/`,
+                    link: `/src/${pkgName}/${name}/`,
                   }
                 }
                 return null
