@@ -1,4 +1,4 @@
-import { toNumber } from '..'
+import { toNumber } from '../..'
 
 export function formatNumber(val: number | string | undefined, fractionDigits = 2) {
   if (typeof val === 'undefined')

@@ -8,4 +8,4 @@ preloadAssets 可以用来预加载图片、字体。
 
 ## API
 
-<<< ./types.ts
+<<< ./src/types.ts
