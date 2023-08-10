@@ -6,7 +6,7 @@ describe('ufuse', () => {
     // components
     expect(ufuse.LottieView).toBeDefined()
     expect(ufuse.FadeTransition).toBeDefined()
-    expect(ufuse.DNumber).toBeDefined()
+    expect(ufuse.AnimateDigits).toBeDefined()
     expect(ufuse.SplineView).toBeDefined()
     expect(ufuse.EyeCryptButton).toBeDefined()
 

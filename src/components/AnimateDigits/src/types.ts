@@ -1,4 +1,4 @@
-export interface DNumberProps {
+export interface AnimateDigitsProps {
   /**
    * 数值
    */

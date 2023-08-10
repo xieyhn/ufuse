@@ -2,10 +2,10 @@
 import { onBeforeUnmount, ref, watchEffect } from 'vue'
 import gsap from 'gsap'
 import { formatNumber } from 'ufuse'
-import type { DNumberProps } from './types'
+import type { AnimateDigitsProps } from './types'
 
 const props = withDefaults(
-  defineProps<DNumberProps>(),
+  defineProps<AnimateDigitsProps>(),
   {
     suffix: '',
     fractionDigits: 0,
