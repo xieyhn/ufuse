@@ -18,7 +18,9 @@ WeatherProvider 是一个提供指定地区天气信息的组件。
 
 ## 预览
 
-<Demo />
+<ClientOnly>
+  <Demo />
+</ClientOnly>
 
 ## API
 

@@ -18,7 +18,9 @@ v-pull 指令可以实现一个擦拭动画效果。
 
 ## 预览
 
-<Demo />
+<ClientOnly>
+  <Demo />
+</ClientOnly>
 
 ## API
 

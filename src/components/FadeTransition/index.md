@@ -12,7 +12,9 @@ FadeTransition 提供开箱使用的渐变动画
 
 ## 预览
 
-<Demo />
+<ClientOnly>
+  <Demo />
+</ClientOnly>
 
 ## CSS 变量
 

@@ -12,7 +12,9 @@ vCompactFit 指令可以将元素超出指定大小时缩小至指定大小。
 
 ## 预览
 
-<Demo />
+<ClientOnly>
+  <Demo />
+</ClientOnly>
 
 ## API
 

@@ -18,7 +18,9 @@ Spline 在 Vue 组件上的实现
 
 ## 预览
 
-<Demo />
+<ClientOnly>
+  <Demo />
+</ClientOnly>
 
 ## API
 

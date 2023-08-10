@@ -18,7 +18,9 @@ LottieView 是一个 Lottie 动画播放容器，在没有其它额外逻辑只�
 
 ## 预览
 
-<Demo />
+<ClientOnly>
+  <Demo />
+</ClientOnly>
 
 ## API
 

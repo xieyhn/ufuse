@@ -13,10 +13,14 @@ useAbortController 可以用在需要取消之前的请求或放弃之前的操�
 
 <<< ./Demo.vue
 
-<Demo />
+<ClientOnly>
+  <Demo />
+</ClientOnly>
 
 ### Demo - 取消之前的请求
 
 <<< ./AxiosDemo.vue
 
-<AxiosDemo />
+<ClientOnly>
+  <AxiosDemo />
+</ClientOnly>
