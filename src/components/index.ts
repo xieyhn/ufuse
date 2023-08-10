@@ -11,3 +11,6 @@ export * from './SplineView/types'
 
 export { default as EyeCryptButton } from './EyeCryptButton/index.vue'
 export * from './EyeCryptButton/types'
+
+export { default as WeatherProvider } from './WeatherProvider/src/index.vue'
+export type { WeatherProviderProps } from './WeatherProvider/src/types'
