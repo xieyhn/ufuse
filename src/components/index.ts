@@ -1,16 +1,16 @@
-export { default as LottieView } from './LottieView/index.vue'
-export * from './LottieView/types'
+export { default as LottieView } from './LottieView/src/index.vue'
+export * from './LottieView/src/types'
 
-export { default as FadeTransition } from './FadeTransition/index.vue'
+export { default as FadeTransition } from './FadeTransition/src/index.vue'
 
-export { default as DNumber } from './DNumber/index.vue'
-export * from './DNumber/types'
+export { default as DNumber } from './DNumber/src/index.vue'
+export * from './DNumber/src/types'
 
-export { default as SplineView } from './SplineView/index.vue'
-export * from './SplineView/types'
+export { default as SplineView } from './SplineView/src/index.vue'
+export * from './SplineView/src/types'
 
-export { default as EyeCryptButton } from './EyeCryptButton/index.vue'
-export * from './EyeCryptButton/types'
+export { default as EyeCryptButton } from './EyeCryptButton/src/index.vue'
+export * from './EyeCryptButton/src/types'
 
 export { default as WeatherProvider } from './WeatherProvider/src/index.vue'
 export type { WeatherProviderProps } from './WeatherProvider/src/types'

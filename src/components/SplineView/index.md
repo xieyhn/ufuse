@@ -22,4 +22,4 @@ Spline 在 Vue 组件上的实现
 
 ## API
 
-<<< ./types.ts
+<<< ./src/types.ts

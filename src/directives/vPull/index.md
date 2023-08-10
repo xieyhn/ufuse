@@ -22,4 +22,4 @@ v-pull 指令可以实现一个擦拭动画效果。
 
 ## API
 
-<<< ./types.ts
+<<< ./src/types.ts

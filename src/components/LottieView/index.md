@@ -22,4 +22,4 @@ LottieView 是一个 Lottie 动画播放容器，在没有其它额外逻辑只�
 
 ## API
 
-<<< ./types.ts
+<<< ./src/types.ts

@@ -1,1 +1,1 @@
-export * from './useAbortController'
+export * from './useAbortController/src'
