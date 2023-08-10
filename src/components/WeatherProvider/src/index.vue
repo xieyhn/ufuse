@@ -93,7 +93,10 @@ fetchWeatherInfo(props.amapKey, props.adcode)
 
     loaded.value = true
   })
-  .catch(() => error.value = true)
+  .catch((err) => {
+    console.warn(`[WeatherProvider] ${err}`)
+    error.value = true
+  })
 </script>
 
 <template>

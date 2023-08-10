@@ -4,7 +4,7 @@ async function loadLottieJSON(records: Record<string, () => Promise<any>>) {
   const files = Object.keys(records)
   const modules = await Promise.all(Object.values(files).map(key => records[key]()))
   const jsonIndex = files.findIndex(key => key.endsWith('index.json'))
-  const json = modules[jsonIndex]
+  const json = JSON.parse(JSON.stringify(modules[jsonIndex])) as any
 
   json.assets?.forEach((asset: any) => {
     // 移除 assets 基础路径
@@ -14,7 +14,7 @@ async function loadLottieJSON(records: Record<string, () => Promise<any>>) {
     asset.p = modules[idx].default
   })
 
-  return JSON.parse(JSON.stringify(json))
+  return json
 }
 
 export function loadIconAnimationData(main: WeatherMain) {

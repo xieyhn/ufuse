@@ -16,6 +16,8 @@ import { WeatherProvider } from 'ufuse'
         <span>&nbsp;</span>
         <p>{{ tempMin }} ~ {{ tempMax }}</p>
       </div>
+      <span v-else-if="loading">Loading...</span>
+      <span v-else-if="error">Error!</span>
     </WeatherProvider>
   </div>
 </template>

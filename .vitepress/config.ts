@@ -1,11 +1,12 @@
 import '@total-typescript/ts-reset'
 import fs from 'node:fs'
 import path from 'node:path'
+import process from 'node:process'
 import { defineConfig } from 'vitepress'
 import { MarkdownTransform } from './plugins/MarkdownTransform'
 
-const pkgsPath = path.resolve(__dirname, '../src')
-const ignorePkgs = ['public']
+const cwd = process.cwd()
+const pkgsPath = path.resolve(cwd, 'src')
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -17,7 +18,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        ufuse: path.resolve(__dirname, '../src/index'),
+        ufuse: path.resolve(cwd, 'src/index'),
       },
     },
     plugins: [
@@ -45,9 +46,6 @@ export default defineConfig({
     sidebar: [
       ...fs.readdirSync(pkgsPath)
         .map((pkgName) => {
-          if (ignorePkgs.includes(pkgName))
-            return null
-
           const pkgPath = path.resolve(pkgsPath, pkgName)
 
           if (!fs.statSync(pkgPath).isDirectory())

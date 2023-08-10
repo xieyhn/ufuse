@@ -16,9 +16,11 @@ function handleMouseDown(event: SplineEvent) {
 }
 
 onMounted(async () => {
-  const spline = await splineView.value!.getSpline()
-
-  console.log(spline)
+  try {
+    const spline = await splineView.value!.getSpline()
+    console.log(spline)
+  }
+  catch (err) { }
 })
 </script>
 
