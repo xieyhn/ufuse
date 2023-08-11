@@ -29,12 +29,12 @@ onMounted(() => {
   if (props.crypt)
     animation.goToAndStop(0, true)
   else
-    animation.goToAndStop(20, true)
+    animation.goToAndStop(10, true)
 
   watch(() => props.crypt, () => {
     tween?.kill()
     tween = gsap.to(frame, {
-      v: props.crypt ? 0 : 20,
+      v: props.crypt ? 0 : 10,
       ease: 'none',
       duration: props.duration / 1000,
       onUpdate: () => {
