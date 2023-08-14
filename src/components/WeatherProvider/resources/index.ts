@@ -1,34 +1,18 @@
+import loadLottieJSON from 'ufuse/src/utils/loadLottieJSON'
 import type { WeatherMain } from '../types'
-
-async function loadLottieJSON(records: Record<string, () => Promise<any>>) {
-  const files = Object.keys(records)
-  const modules = await Promise.all(Object.values(files).map(key => records[key]()))
-  const jsonIndex = files.findIndex(key => key.endsWith('index.json'))
-  const json = JSON.parse(JSON.stringify(modules[jsonIndex])) as any
-
-  json.assets?.forEach((asset: any) => {
-    // 移除 assets 基础路径
-    Reflect.deleteProperty(asset, 'u')
-    // 修改资源路径变为绝对路径
-    const idx = files.findIndex(key => key.endsWith(asset.p))
-    asset.p = modules[idx].default
-  })
-
-  return json
-}
 
 export function loadIconAnimationData(main: WeatherMain) {
   switch (main) {
     case 'cloudy':
-      return loadLottieJSON(import.meta.glob('./cloudy/*'))
+      return loadLottieJSON(import.meta.glob('./cloudy/**/*', { eager: true }))
     case 'rain':
-      return loadLottieJSON(import.meta.glob('./rain/*'))
+      return loadLottieJSON(import.meta.glob('./rain/**/*', { eager: true }))
     case 'snow':
-      return loadLottieJSON(import.meta.glob('./snow/*'))
+      return loadLottieJSON(import.meta.glob('./snow/**/*', { eager: true }))
     case 'sunny':
-      return loadLottieJSON(import.meta.glob('./sunny/*'))
+      return loadLottieJSON(import.meta.glob('./sunny/**/*', { eager: true }))
     case 'thunderstorm':
-      return loadLottieJSON(import.meta.glob('./thunderstorm/*'))
+      return loadLottieJSON(import.meta.glob('./thunderstorm/**/*', { eager: true }))
   }
 }
 
