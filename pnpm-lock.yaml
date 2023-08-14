@@ -5,15 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@splinetool/runtime':
-    specifier: ^0.9.411
-    version: 0.9.411
-  gsap:
-    specifier: ^3.12.2
-    version: 3.12.2
-  lottie-web:
-    specifier: ^5.12.2
-    version: 5.12.2
   sass:
     specifier: '*'
     version: 0.4.0
@@ -25,6 +16,9 @@ devDependencies:
   '@antfu/eslint-config':
     specifier: ^0.39.8
     version: 0.39.8(eslint@8.45.0)(typescript@5.1.6)
+  '@splinetool/runtime':
+    specifier: ^0.9.418
+    version: 0.9.418
   '@total-typescript/ts-reset':
     specifier: ^0.4.2
     version: 0.4.2
@@ -43,9 +37,15 @@ devDependencies:
   eslint:
     specifier: ^8.45.0
     version: 8.45.0
+  gsap:
+    specifier: ^3.12.2
+    version: 3.12.2
   lint-staged:
     specifier: ^13.2.3
     version: 13.2.3
+  lottie-web:
+    specifier: ^5.12.2
+    version: 5.12.2
   md5:
     specifier: ^2.3.0
     version: 2.3.0
@@ -727,12 +727,12 @@ packages:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
 
-  /@splinetool/runtime@0.9.411:
-    resolution: {integrity: sha512-ByR96AVBr+Ol6hY/d/h5WBiQjTY1s8gwg/aYMuOdcwhUlaQ21BRRA3iEx1YD/3z6PqvEN+EJ1ubBUUhN65dqCg==}
+  /@splinetool/runtime@0.9.418:
+    resolution: {integrity: sha512-jGkw+IKYcRSs08A9o7hdQq9BziM7pVSLKSSdNGNz0iH+io7/amCTuNg2mG+KBF5bglihqTPmC0VkrSv84iwcbw==}
     dependencies:
       on-change: 4.0.2
       semver-compare: 1.0.0
-    dev: false
+    dev: true
 
   /@total-typescript/ts-reset@0.4.2:
     resolution: {integrity: sha512-vqd7ZUDSrXFVT1n8b2kc3LnklncDQFPvR58yUS1kEP23/nHPAO9l1lMjUfnPrXYYk4Hj54rrLKMW5ipwk7k09A==}
@@ -2343,7 +2343,7 @@ packages:
 
   /gsap@3.12.2:
     resolution: {integrity: sha512-EkYnpG8qHgYBFAwsgsGEqvT1WUidX0tt/ijepx7z8EUJHElykg91RvW1XbkT59T0gZzzszOpjQv7SE41XuIXyQ==}
-    dev: false
+    dev: true
 
   /has-flag@3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
@@ -2653,7 +2653,7 @@ packages:
 
   /lottie-web@5.12.2:
     resolution: {integrity: sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==}
-    dev: false
+    dev: true
 
   /loupe@2.3.6:
     resolution: {integrity: sha512-RaPMZKiMy8/JruncMU5Bt6na1eftNoo++R4Y+N2FrxkDVTrGvcyzFTsaGif4QTeKESheMGegbhw6iUAq+5A8zA==}
@@ -2856,7 +2856,7 @@ packages:
   /on-change@4.0.2:
     resolution: {integrity: sha512-cMtCyuJmTx/bg2HCpHo3ZLeF7FZnBOapLqZHr2AlLeJ5Ul0Zu2mUJJz051Fdwu/Et2YW04ZD+TtU+gVy0ACNCA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-    dev: false
+    dev: true
 
   /once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -3269,7 +3269,7 @@ packages:
 
   /semver-compare@1.0.0:
     resolution: {integrity: sha512-YM3/ITh2MJ5MtzaM429anh+x2jiLVjqILF4m4oyQB18W7Ggea7BfqdH/wGMK7dDiMghv/6WG7znWMwUDzJiXow==}
-    dev: false
+    dev: true
 
   /semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
