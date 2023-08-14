@@ -6,11 +6,7 @@ import Demo from './Demo.vue'
 
 WeatherProvider 是一个提供指定地区天气信息的组件。
 
-::: tip
-需要安装以下依赖：
-
-+ lottie-web
-:::
+<Dependencies deps="lottie-web" />
 
 ## 使用
 

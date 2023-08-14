@@ -6,11 +6,7 @@ import Demo from './Demo.vue'
 
 Spline 在 Vue 组件上的实现
 
-::: tip
-需要安装以下依赖：
-
-+ @splinetool/runtime
-:::
+<Dependencies deps="@splinetool/runtime" />
 
 ## 使用
 

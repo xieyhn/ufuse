@@ -7,11 +7,7 @@ import Demo from './Demo.vue'
 
 EyeCryptButton 是一个眼睛睁开/闭合的按钮，可以用于密码输入框的显示/隐藏密码。
 
-::: tip
-需要安装以下依赖：
-
-+ lottie-web
-:::
+<Dependencies deps="lottie-web" />
 
 ## 使用
 
