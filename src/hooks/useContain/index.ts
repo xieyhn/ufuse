@@ -18,6 +18,8 @@ export default function useContain({ el, designWidth, designHeight }: UseContain
 
   watchEffect(() => {
     if (el.value) {
+      el.value.style.width = `${designWidth}px`
+      el.value.style.height = `${designHeight}px`
       el.value.style.position = 'absolute'
       el.value.style.left = '50%'
       el.value.style.top = '50%'
