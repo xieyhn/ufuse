@@ -6,17 +6,13 @@ UFUse 是一个代码仓库，而不是托管在 npmjs.com 上的一个包（同
 
 ## 安装
 
-以 pnpm 为例，可以通过以下命令安装 UFUse：
+以 pnpm 为例，可以通过以下命令安装标签为 `1.0.0` 的 UFUse：
 
 ```bash
-pnpm install git+http://192.168.0.41/xieyuhang/ufuse.git
+pnpm install 'git+http://192.168.0.41/xieyuhang/ufuse.git#1.0.0'
 ```
 
-或是在后面的使用中，UFUse 发生了更新，以 pnpm 为例可以通过以下命令更新依赖：
-
-```bash
-pnpm update ufuse
-```
+或是在后面的使用中 UFUse 发生了更新，重新修改标签再运行 `pnpm install` 即可。
 
 ## 使用
 
