@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import useAbortController from 'ufuse/hooks/useAbortController'
+import useAbortController from 'ufuse/src/hooks/useAbortController'
 
 const keyword = ref('')
 const ac = useAbortController()

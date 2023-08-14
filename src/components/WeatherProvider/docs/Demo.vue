@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WeatherProvider from 'ufuse/components/WeatherProvider/index.vue'
+import WeatherProvider from 'ufuse/src/components/WeatherProvider/index.vue'
 </script>
 
 <template>

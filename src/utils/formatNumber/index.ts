@@ -1,4 +1,4 @@
-import toNumber from 'ufuse/utils/toNumber'
+import toNumber from 'ufuse/src/utils/toNumber'
 
 export default function formatNumber(val: number | string | undefined, fractionDigits = 2) {
   if (typeof val === 'undefined')

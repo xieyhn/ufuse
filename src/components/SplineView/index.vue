@@ -2,7 +2,7 @@
 import { getCurrentInstance, onBeforeUnmount, onMounted, ref } from 'vue'
 import type { SplineEventName } from '@splinetool/runtime'
 import { Application } from '@splinetool/runtime'
-import createPromise from 'ufuse/utils/createPromise'
+import createPromise from 'ufuse/src/utils/createPromise'
 import type { SplineViewProps } from './types'
 
 const props = defineProps<SplineViewProps>()

@@ -1,4 +1,4 @@
-import toNumber from 'ufuse/utils/toNumber'
+import toNumber from 'ufuse/src/utils/toNumber'
 import { describe, expect, it } from 'vitest'
 
 describe('toNumber', () => {

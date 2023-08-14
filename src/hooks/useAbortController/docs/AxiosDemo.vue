@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import useAbortController from 'ufuse/hooks/useAbortController'
+import useAbortController from 'ufuse/src/hooks/useAbortController'
 import axios, { isCancel } from 'axios'
 
 const keyword = ref('')

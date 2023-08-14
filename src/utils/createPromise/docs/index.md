@@ -5,7 +5,7 @@
 ## 代码演示
 
 ```ts
-import createPromise from 'ufuse/utils/createPromise'
+import createPromise from 'ufuse/src/utils/createPromise'
 
 const { promise, resolve, reject } = createPromise<number>()
 ```

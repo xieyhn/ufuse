@@ -5,7 +5,7 @@
 ## 使用
 
 ```ts
-import 'ufuse/css/reset/index.css'
+import 'ufuse/src/css/reset/index.css'
 ```
 
 ## 源码

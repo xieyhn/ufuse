@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import vCompactFit from 'ufuse/directives/vCompactFit'
+import vCompactFit from 'ufuse/src/directives/vCompactFit'
 </script>
 
 <template>

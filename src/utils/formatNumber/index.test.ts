@@ -1,4 +1,4 @@
-import formatNumber from 'ufuse/utils/formatNumber'
+import formatNumber from 'ufuse/src/utils/formatNumber'
 import { describe, expect, it } from 'vitest'
 
 describe('formatNumber', () => {

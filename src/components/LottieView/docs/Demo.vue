@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LottieView from 'ufuse/components/LottieView/index.vue'
+import LottieView from 'ufuse/src/components/LottieView/index.vue'
 import animationData from './loading.json'
 </script>
 

@@ -1,4 +1,4 @@
-import preloadAssets from 'ufuse/utils/preloadAssets'
+import preloadAssets from 'ufuse/src/utils/preloadAssets'
 
 const images = [
   '/a.png',

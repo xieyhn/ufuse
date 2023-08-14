@@ -1,8 +1,8 @@
 <script setup lang="ts">
 /* eslint-disable no-console */
 import type { SplineEvent } from '@splinetool/runtime'
-import type { SplineViewInstance } from 'ufuse/components/SplineView/types'
-import SplineView from 'ufuse/components/SplineView/index.vue'
+import type { SplineViewInstance } from 'ufuse/src/components/SplineView/types'
+import SplineView from 'ufuse/src/components/SplineView/index.vue'
 import { onMounted, ref } from 'vue'
 import scene from './scene.splinecode?url'
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, ref, watchEffect } from 'vue'
 import gsap from 'gsap'
-import formatNumber from 'ufuse/utils/formatNumber'
+import formatNumber from 'ufuse/src//utils/formatNumber'
 import type { AnimateDigitsProps } from './types'
 
 const props = withDefaults(

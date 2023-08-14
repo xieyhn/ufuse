@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AnimateDigits from 'ufuse/components/AnimateDigits/index.vue'
+import AnimateDigits from 'ufuse/src/components/AnimateDigits/index.vue'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const value = ref(23810)

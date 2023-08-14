@@ -18,7 +18,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        ufuse: path.resolve(cwd, 'src/'),
+        ufuse: path.resolve(cwd, './'),
       },
     },
     plugins: [

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import vPull from 'ufuse/directives/vPull'
+import vPull from 'ufuse/src/directives/vPull'
 
 const key = ref(Date.now())
 </script>

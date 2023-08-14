@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { h, ref } from 'vue'
-import LottieView from 'ufuse/components/LottieView/index.vue'
+import LottieView from 'ufuse/src/components/LottieView/index.vue'
 import type { WeatherMain, WeatherProviderProps } from './types'
 import { getSegmentsByWeatherMain, loadIconAnimationData } from './resources'
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import EyeCryptButton from 'ufuse/components/EyeCryptButton/index.vue'
+import EyeCryptButton from 'ufuse/src/components/EyeCryptButton/index.vue'
 import { ref } from 'vue'
 
 const crypt = ref(true)

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import ensureArray from 'ufuse/utils/ensureArray'
+import ensureArray from 'ufuse/src/utils/ensureArray'
 
 describe('ensureArray', () => {
   it('基本使用', () => {

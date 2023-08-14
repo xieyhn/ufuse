@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import FadeTransition from 'ufuse/components/FadeTransition/index.vue'
+import FadeTransition from 'ufuse/src/components/FadeTransition/index.vue'
 
 const flag = ref(false)
 </script>

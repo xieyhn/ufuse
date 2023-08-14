@@ -1,6 +1,6 @@
 {
   "name": "ufuse",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Vue Hooks and Components for UFrontend",
   "private": true,
   "packageManager": "pnpm@8.5.1",
@@ -15,20 +15,6 @@
   "files": [
     "src/"
   ],
-  "exports": {
-    "./hooks/": {
-      "import": "./src/hooks/"
-    },
-    "./components/": {
-      "import": "./src/components/"
-    },
-    "./directives/": {
-      "import": "./src/directives/"
-    },
-    "./css/": {
-      "import": "./src/css/"
-    }
-  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",
     "@splinetool/runtime": "^0.9.418",

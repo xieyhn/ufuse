@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import combine from 'ufuse/utils/combine'
+import combine from 'ufuse/src/utils/combine'
 
 describe('combine', () => {
   it('基本使用', () => {

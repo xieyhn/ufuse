@@ -1,23 +1,23 @@
 import { describe, expect, it } from 'vitest'
 
-import LottieView from 'ufuse/components/LottieView/index.vue'
-import FadeTransition from 'ufuse/components/FadeTransition/index.vue'
-import AnimateDigits from 'ufuse/components/AnimateDigits/index.vue'
-import SplineView from 'ufuse/components/SplineView/index.vue'
-import EyeCryptButton from 'ufuse/components/EyeCryptButton/index.vue'
+import LottieView from 'ufuse/src/components/LottieView/index.vue'
+import FadeTransition from 'ufuse/src/components/FadeTransition/index.vue'
+import AnimateDigits from 'ufuse/src/components/AnimateDigits/index.vue'
+import SplineView from 'ufuse/src/components/SplineView/index.vue'
+import EyeCryptButton from 'ufuse/src/components/EyeCryptButton/index.vue'
 
-import vPull from 'ufuse/directives/vPull'
-import vCompactFit from 'ufuse/directives/vCompactFit'
+import vPull from 'ufuse/src/directives/vPull'
+import vCompactFit from 'ufuse/src/directives/vCompactFit'
 
-import useAbortController from 'ufuse/hooks/useAbortController'
-import useContain from 'ufuse/hooks/useContain'
+import useAbortController from 'ufuse/src/hooks/useAbortController'
+import useContain from 'ufuse/src/hooks/useContain'
 
-import combine from 'ufuse/utils/combine'
-import toNumber from 'ufuse/utils/toNumber'
-import formatNumber from 'ufuse/utils/formatNumber'
-import ensureArray from 'ufuse/utils/ensureArray'
-import preloadAssets from 'ufuse/utils/preloadAssets'
-import createPromise from 'ufuse/utils/createPromise'
+import combine from 'ufuse/src/utils/combine'
+import toNumber from 'ufuse/src/utils/toNumber'
+import formatNumber from 'ufuse/src/utils/formatNumber'
+import ensureArray from 'ufuse/src/utils/ensureArray'
+import preloadAssets from 'ufuse/src/utils/preloadAssets'
+import createPromise from 'ufuse/src/utils/createPromise'
 
 describe('ufuse', () => {
   it('expose', () => {
