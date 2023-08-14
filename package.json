@@ -16,11 +16,17 @@
     "src/"
   ],
   "exports": {
-    "./hooks/*": {
-      "import": "./src/hooks/*"
+    "./hooks/": {
+      "import": "./src/hooks/"
     },
-    "./css/reset.css": {
-      "import": "./src/css/reset/index.css"
+    "./components/": {
+      "import": "./src/components/"
+    },
+    "./directives/": {
+      "import": "./src/directives/"
+    },
+    "./css/": {
+      "import": "./src/css/"
     }
   },
   "devDependencies": {

@@ -18,7 +18,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        ufuse: path.resolve(cwd, 'src/index'),
+        ufuse: path.resolve(cwd, 'src/'),
       },
     },
     plugins: [
@@ -58,7 +58,7 @@ export default defineConfig({
                 if (fs.statSync(path.resolve(pkgPath, name)).isDirectory()) {
                   return {
                     text: name,
-                    link: `/src/${pkgName}/${name}/`,
+                    link: `/src/${pkgName}/${name}/docs/`,
                   }
                 }
                 return null

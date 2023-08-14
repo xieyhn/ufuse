@@ -16,9 +16,7 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "ufuse": [
-        "./src/index.ts"
-      ]
+      "ufuse/*": ["src/*"]
     }
   },
   "include": [
