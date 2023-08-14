@@ -16,6 +16,7 @@ describe('ufuse', () => {
 
     // hooks
     expect(ufuse.useAbortController).toBeDefined()
+    expect(ufuse.useContain).toBeDefined()
 
     // utils
     expect(ufuse.combine).toBeDefined()
