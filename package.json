@@ -16,8 +16,8 @@
     "src/"
   ],
   "exports": {
-    ".": {
-      "import": "./src/index.ts"
+    "./hooks/*": {
+      "import": "./src/hooks/*"
     },
     "./css/reset.css": {
       "import": "./src/css/reset/index.css"
