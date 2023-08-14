@@ -17,7 +17,7 @@ pnpm install 'git+http://192.168.0.41/xieyuhang/ufuse.git#1.0.0'
 ## 使用
 
 ```ts
-import { vPull } from 'ufuse'
+import vPull from 'ufuse/src/directives/vPull'
 
 // 其它代码
 ```
