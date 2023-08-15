@@ -1,35 +1,44 @@
-import { onBeforeUnmount, ref, watchEffect } from 'vue'
+import { onBeforeUnmount, onMounted, ref, watchEffect } from 'vue'
 import type { UseContainOptions } from './types'
 
 export default function useContain({ el, designWidth, designHeight }: UseContainOptions) {
   const scale = ref(1)
   const designRatio = designWidth / designHeight
+  let resizeObserver: ResizeObserver | null = null
 
-  const handler = () => {
-    const screenRatio = window.innerWidth / window.innerHeight
+  onMounted(() => {
+    const container = el.value!.parentNode! as HTMLElement
 
-    if (screenRatio > designRatio)
-      scale.value = window.innerHeight / designHeight
-    else
-      scale.value = window.innerWidth / designWidth
-  }
+    const handler = () => {
+      const screenRatio = container.clientWidth / container.clientHeight
 
-  handler()
-
-  watchEffect(() => {
-    if (el.value) {
-      el.value.style.width = `${designWidth}px`
-      el.value.style.height = `${designHeight}px`
-      el.value.style.position = 'absolute'
-      el.value.style.left = '50%'
-      el.value.style.top = '50%'
-      el.value.style.transform = `translate(-50%, -50%) scale(${scale.value})`
+      if (screenRatio > designRatio)
+        scale.value = container.clientHeight / designHeight
+      else
+        scale.value = container.clientWidth / designWidth
     }
+
+    handler()
+
+    watchEffect(() => {
+      if (el.value) {
+        el.value.style.width = `${designWidth}px`
+        el.value.style.height = `${designHeight}px`
+        el.value.style.position = 'absolute'
+        el.value.style.left = '50%'
+        el.value.style.top = '50%'
+        el.value.style.transform = `translate(-50%, -50%) scale(${scale.value})`
+      }
+    })
+
+    resizeObserver = new ResizeObserver(() => {
+      handler()
+    })
+
+    resizeObserver.observe(container)
   })
 
-  window.addEventListener('resize', handler)
-
   onBeforeUnmount(() => {
-    window.removeEventListener('resize', handler)
+    resizeObserver?.disconnect()
   })
 }
