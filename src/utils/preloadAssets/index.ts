@@ -16,8 +16,8 @@ export default function preloadAssets(options: preloadAssetsOptions) {
 
   if (options.fonts) {
     options.fonts.forEach((i) => {
-      const [name, url] = i
-      const font = new FontFace(name, `url(${url})`)
+      const [name, path, descriptors] = i
+      const font = new FontFace(name, `url(${path})`, descriptors)
       task.push(font.load().then((loadedFont) => {
         window.document.fonts.add(loadedFont)
       }))
