@@ -2,19 +2,10 @@ export interface AnimateDigitsProps {
   /**
    * 数值
    */
-  n: number
-  /**
-   * 指定后缀字符
-   */
-  suffix?: string
-  /**
-   * 保留小数位数
-   * @default 0
-   */
-  fractionDigits?: number
+  value: number
   /**
    * 动画时长，单位：毫秒
-   * @default 600
+   * @default 1000
    */
   duration?: number
   /**
@@ -22,4 +13,9 @@ export interface AnimateDigitsProps {
    * @default false
    */
   disabled?: boolean
+
+  /**
+   * 数值格式化函数
+   */
+  formatter?: (value: number) => string
 }

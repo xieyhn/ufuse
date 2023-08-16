@@ -1,19 +1,16 @@
 <script setup lang="ts">
 import { onBeforeUnmount, ref, watchEffect } from 'vue'
 import gsap from 'gsap'
-import formatNumber from 'ufuse/src//utils/formatNumber'
 import type { AnimateDigitsProps } from './types'
 
 const props = withDefaults(
   defineProps<AnimateDigitsProps>(),
   {
-    suffix: '',
-    fractionDigits: 0,
     duration: 1000,
     disabled: false,
+    formatter: (v: number) => `${v}`,
   },
 )
-
 const value = ref(0)
 let tween: gsap.core.Tween | null = null
 
@@ -22,12 +19,12 @@ watchEffect(() => {
     tween.kill()
 
   if (props.disabled) {
-    value.value = props.n
+    value.value = props.value
   }
   else {
     tween = gsap.to(value, {
       duration: props.duration / 1000,
-      value: props.n,
+      value: props.value,
     })
   }
 })
@@ -39,7 +36,6 @@ onBeforeUnmount(() => {
 
 <template>
   <span>
-    <span>{{ formatNumber(value, props.fractionDigits) }}</span>
-    <span v-if="props.suffix">{{ props.suffix }}</span>
+    <span>{{ props.formatter(value) }}</span>
   </span>
 </template>

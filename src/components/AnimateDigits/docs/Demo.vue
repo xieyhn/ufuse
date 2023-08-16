@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AnimateDigits from 'ufuse/src/components/AnimateDigits/index.vue'
+import formatNumber from 'ufuse/src/utils/formatNumber'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const value = ref(23810)
@@ -22,16 +23,16 @@ onBeforeUnmount(() => {
 <template>
   <div class="demo">
     <p>
-      <AnimateDigits :n="value" />
+      <AnimateDigits :value="value" />
     </p>
     <p>
-      <AnimateDigits :n="value" :fraction-digits="2" />
+      <AnimateDigits :value="value" :formatter="(v: number) => formatNumber(v, 2)" />
     </p>
     <p>
-      <AnimateDigits :n="value" :fraction-digits="2" suffix="%" />
+      <AnimateDigits :value="value" :formatter="(v: number) => `${formatNumber(v, 2)}%`" />
     </p>
     <p>
-      <AnimateDigits :n="value" :fraction-digits="1" disabled />
+      <AnimateDigits :value="value" disabled />
     </p>
   </div>
 </template>
