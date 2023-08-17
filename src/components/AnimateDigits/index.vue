@@ -38,7 +38,5 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <span>
-    <span>{{ props.formatter(value) }}</span>
-  </span>
+  <span>{{ props.formatter(value) }}</span>
 </template>
