@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, ref, watchEffect } from 'vue'
 import gsap from 'gsap'
-import type { AnimateDigitsProps } from './types'
+import type { AnimateDigitsEvent, AnimateDigitsProps } from './types'
 
 const props = withDefaults(
   defineProps<AnimateDigitsProps>(),
@@ -11,6 +11,7 @@ const props = withDefaults(
     formatter: (v: number) => `${v}`,
   },
 )
+const emit = defineEmits<AnimateDigitsEvent>()
 const value = ref(0)
 let tween: gsap.core.Tween | null = null
 
@@ -25,6 +26,7 @@ watchEffect(() => {
     tween = gsap.to(value, {
       duration: props.duration / 1000,
       value: props.value,
+      onComplete: () => emit('complete'),
     })
   }
 })

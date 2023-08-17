@@ -13,9 +13,15 @@ export interface AnimateDigitsProps {
    * @default false
    */
   disabled?: boolean
-
   /**
    * 数值格式化函数
    */
   formatter?: (value: number) => string
+}
+
+export interface AnimateDigitsEvent {
+  /**
+   * 每一次数值变化动画完成时触发
+   */
+  (event: 'complete'): void
 }
