@@ -7,22 +7,23 @@ const props = withDefaults(
   defineProps<AnimateDigitsProps>(),
   {
     duration: 1000,
-    disabled: false,
     formatter: (v: number) => `${v}`,
   },
 )
 const emit = defineEmits<AnimateDigitsEvents>()
 const value = ref(0)
+let isRun = false
 let tween: gsap.core.Tween | null = null
 
 watchEffect(() => {
   if (tween)
     tween.kill()
 
-  if (props.disabled) {
+  if (props.disabled || (props.once && isRun)) {
     value.value = props.value
   }
   else {
+    isRun = true
     tween = gsap.to(value, {
       duration: props.duration / 1000,
       value: props.value,

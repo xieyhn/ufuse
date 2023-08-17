@@ -9,6 +9,10 @@ export interface AnimateDigitsProps {
    */
   duration?: number
   /**
+   * 是否只执行一次动画
+   */
+  once?: boolean
+  /**
    * 是否禁用
    * @default false
    */

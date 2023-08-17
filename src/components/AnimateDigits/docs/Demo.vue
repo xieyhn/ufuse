@@ -26,6 +26,9 @@ onBeforeUnmount(() => {
       <AnimateDigits :value="value" />
     </p>
     <p>
+      <AnimateDigits :value="value" once />
+    </p>
+    <p>
       <AnimateDigits :value="value" :formatter="(v: number) => formatNumber(v, 2)" />
     </p>
     <p>
