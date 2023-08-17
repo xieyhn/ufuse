@@ -4,6 +4,11 @@ export interface AnimateDigitsProps {
    */
   value: number
   /**
+   * 数值变化步长
+   * @example 1 避免出现小数
+   */
+  step?: number
+  /**
    * 动画时长，单位：毫秒
    * @default 1000
    */
@@ -20,7 +25,7 @@ export interface AnimateDigitsProps {
   /**
    * 数值格式化函数
    */
-  formatter?: (value: number) => string
+  formatter?: (value: number) => number | string
 }
 
 export interface AnimateDigitsEvents {

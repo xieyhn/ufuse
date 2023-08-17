@@ -7,7 +7,7 @@ const value = ref(23810)
 let timer: number
 
 function update() {
-  value.value = Math.random() * 10000 / 3
+  value.value = Math.round(Math.random() * 10000)
 }
 
 onMounted(() => {
@@ -24,6 +24,9 @@ onBeforeUnmount(() => {
   <div class="demo">
     <p>
       <AnimateDigits :value="value" />
+    </p>
+    <p>
+      <AnimateDigits :value="value" :step="1" />
     </p>
     <p>
       <AnimateDigits :value="value" once />

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeUnmount, ref, watchEffect } from 'vue'
+import { onBeforeUnmount, ref, watch } from 'vue'
 import gsap from 'gsap'
 import type { AnimateDigitsEvents, AnimateDigitsProps } from './types'
 
@@ -7,7 +7,7 @@ const props = withDefaults(
   defineProps<AnimateDigitsProps>(),
   {
     duration: 1000,
-    formatter: (v: number) => `${v}`,
+    formatter: (v: number) => v,
   },
 )
 const emit = defineEmits<AnimateDigitsEvents>()
@@ -15,7 +15,7 @@ const value = ref(0)
 let isRun = false
 let tween: gsap.core.Tween | null = null
 
-watchEffect(() => {
+watch(() => props.value, () => {
   if (tween)
     tween.kill()
 
@@ -24,13 +24,27 @@ watchEffect(() => {
   }
   else {
     isRun = true
-    tween = gsap.to(value, {
+    const startValue = value.value
+    const endValue = props.value
+    const delta = endValue - startValue
+
+    tween = gsap.to({}, {
       duration: props.duration / 1000,
-      value: props.value,
+      onUpdate: () => {
+        const progress = tween!.progress()
+        if (progress === 1) {
+          value.value = endValue
+          return
+        }
+        if (typeof props.step === 'undefined')
+          value.value = progress * delta + startValue
+        else
+          value.value = Math.floor(progress * delta / props.step) * props.step + startValue
+      },
       onComplete: () => emit('complete'),
     })
   }
-})
+}, { immediate: true })
 
 onBeforeUnmount(() => {
   tween?.kill()
