@@ -10,7 +10,10 @@ export interface WeatherProviderProps {
   adcode?: string
 }
 
-/**
- * @internal
- */
 export type WeatherMain = 'sunny' | 'cloudy' | 'thunderstorm' | 'snow' | 'rain'
+
+export interface WeatherRegion {
+  adcode: string
+  city: string
+  province: string
+}

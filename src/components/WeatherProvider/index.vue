@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { h, ref } from 'vue'
+import { h, reactive, ref } from 'vue'
 import LottieView from 'ufuse/src/components/LottieView/index.vue'
-import type { WeatherMain, WeatherProviderProps } from './types'
+import type { WeatherMain, WeatherProviderProps, WeatherRegion } from './types'
 import { getSegmentsByWeatherMain, loadIconAnimationData } from './resources'
 
 const props = defineProps<WeatherProviderProps>()
@@ -16,6 +16,11 @@ async function fetchWeatherInfo(key: string, adcode?: string): Promise<any> {
 
 const loaded = ref(false)
 const error = ref(false)
+const region = reactive<WeatherRegion>({
+  adcode: '',
+  city: '',
+  province: '',
+})
 const main = ref<WeatherMain | null>(null)
 const tempMin = ref(0)
 const tempMax = ref(0)
@@ -27,7 +32,12 @@ fetchWeatherInfo(props.amapKey, props.adcode)
   .then(async (result) => {
     if (result?.info !== 'OK')
       throw new Error('Failed to fetch weather info')
-    const cast = result?.forecasts?.[0]?.casts?.[0]
+
+    const { casts = [], adcode, city, province } = result?.forecasts?.[0] ?? {}
+    region.adcode = adcode
+    region.city = city
+    region.province = province
+    const cast = casts[0]
 
     if (!cast)
       throw new Error('Failed to fetch weather info')
@@ -103,6 +113,7 @@ fetchWeatherInfo(props.amapKey, props.adcode)
   <slot
     :loading="!loaded && !error"
     :error="error"
+    :region="region"
     :temp-min="tempMin"
     :temp-max="tempMax"
     :description="description"

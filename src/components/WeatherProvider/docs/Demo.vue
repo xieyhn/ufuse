@@ -5,13 +5,15 @@ import WeatherProvider from 'ufuse/src/components/WeatherProvider/index.vue'
 <template>
   <div class="demo">
     <WeatherProvider
-      v-slot="{ loading, error, tempMax, tempMin, description, iconComponent }"
+      v-slot="{ loading, error, tempMax, tempMin, description, iconComponent, region }"
       amap-key="b65e501546fdd93bbda4581b3fc5fd13"
     >
       <div v-if="!loading && !error" class="flex items-center">
         <div class="w-14 h-14">
           <component :is="iconComponent!" />
         </div>
+        <p>{{ region.city }}</p>
+        <span>&nbsp;</span>
         <p>{{ description }}</p>
         <span>&nbsp;</span>
         <p>{{ tempMin }} ~ {{ tempMax }}</p>
