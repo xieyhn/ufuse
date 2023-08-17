@@ -19,7 +19,7 @@ export interface AnimateDigitsProps {
   formatter?: (value: number) => string
 }
 
-export interface AnimateDigitsEvent {
+export interface AnimateDigitsEvents {
   /**
    * 每一次数值变化动画完成时触发
    */
