@@ -7,6 +7,8 @@ function loadLottieJSON(records: Record<string, unknown>) {
   const json = JSON.parse(JSON.stringify(modules[jsonIndex])) as any
 
   json.assets?.forEach((asset: any) => {
+    if (!asset.u || !asset.p)
+      return
     const u = asset.u
     // 移除 assets 基础路径
     Reflect.deleteProperty(asset, 'u')
