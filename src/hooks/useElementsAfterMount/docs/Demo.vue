@@ -2,7 +2,7 @@
 import useElementsAfterMount from 'ufuse/src/hooks/useElementsAfterMount'
 import gsap from 'gsap'
 
-const { collect } = useElementsAfterMount((elements) => {
+const { collect } = useElementsAfterMount<HTMLElement>((elements) => {
   gsap.fromTo(
     elements,
     { opacity: 0, x: 30 },

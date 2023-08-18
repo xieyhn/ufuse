@@ -1,6 +1,6 @@
 import { onMounted } from 'vue'
 
-function useElementsAfterMount<T = HTMLElement>(callback: (elements: T[]) => void) {
+function useElementsAfterMount<T = unknown>(callback: (elements: T[]) => void) {
   let elements: T[] | null = []
 
   const collect = (el: T | null) => {
