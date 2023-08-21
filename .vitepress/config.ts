@@ -7,10 +7,11 @@ import { MarkdownTransform } from './plugins/MarkdownTransform'
 
 const cwd = process.cwd()
 const pkgsPath = path.resolve(cwd, 'src')
+const pkgJSON = JSON.parse(fs.readFileSync(path.resolve(cwd, 'package.json'), 'utf-8')) as Record<string, any>
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'UFUse',
+  title: `UFUse（${pkgJSON.version}）`,
   description: '前端开发工具集',
   head: [
     ['link', { rel: 'icon', type: 'image/ico', href: '/favicon.ico' }],
