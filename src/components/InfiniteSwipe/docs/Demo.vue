@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import InfiniteSwipe from 'ufuse/src/components/InfiniteSwipe/index.vue'
 import { ref } from 'vue'
-import { Random } from 'mockjs'
+import Chance from 'chance'
 
+const chance = new Chance()
 const list = ref(Array.from({ length: 10 }, () => createRowData()))
 
 function handleNext() {
@@ -11,8 +12,8 @@ function handleNext() {
 
 function createRowData() {
   return {
-    id: Random.id(),
-    label: Random.name(),
+    id: chance.string({ length: 5 }),
+    label: chance.name(),
   }
 }
 </script>
