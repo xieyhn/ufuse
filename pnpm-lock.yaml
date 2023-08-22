@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  sass:
-    specifier: '*'
-    version: 0.4.0
   vue:
     specifier: ^3.0.0
     version: 3.3.4
@@ -25,6 +22,9 @@ devDependencies:
   '@types/md5':
     specifier: ^2.3.2
     version: 2.3.2
+  '@types/mockjs':
+    specifier: ^1.0.7
+    version: 1.0.7
   '@vitejs/plugin-vue':
     specifier: ^4.2.3
     version: 4.2.3(vite@4.4.7)(vue@3.3.4)
@@ -49,9 +49,15 @@ devDependencies:
   md5:
     specifier: ^2.3.0
     version: 2.3.0
+  mockjs:
+    specifier: ^1.1.0
+    version: 1.1.0
   postcss:
     specifier: ^8.4.27
     version: 8.4.27
+  sass:
+    specifier: ^1.66.1
+    version: 1.66.1
   simple-git:
     specifier: ^3.19.1
     version: 3.19.1
@@ -66,13 +72,13 @@ devDependencies:
     version: 5.1.6
   vite:
     specifier: ^4.4.7
-    version: 4.4.7(@types/node@20.4.5)
+    version: 4.4.7(@types/node@20.4.5)(sass@1.66.1)
   vitepress:
     specifier: 1.0.0-beta.5
-    version: 1.0.0-beta.5(@algolia/client-search@4.19.1)(axios@1.4.0)(search-insights@2.7.0)
+    version: 1.0.0-beta.5(@algolia/client-search@4.19.1)(axios@1.4.0)(sass@1.66.1)(search-insights@2.7.0)
   vitest:
     specifier: ^0.33.0
-    version: 0.33.0
+    version: 0.33.0(sass@1.66.1)
 
 packages:
 
@@ -762,6 +768,10 @@ packages:
       '@types/unist': 2.0.7
     dev: true
 
+  /@types/mockjs@1.0.7:
+    resolution: {integrity: sha512-OCxXz6hEaJOVpRwuJMiVY5a6LtJcih+br9gwB/Q8ooOBikvk5FpBQ31OlNimXo3EqKha1Z7PFBni+q9m+8NCWg==}
+    dev: true
+
   /@types/node@20.4.5:
     resolution: {integrity: sha512-rt40Nk13II9JwQBdeYqmbn2Q6IVTA5uPhvSO+JVqdXw/6/4glI6oR9ezty/A9Hg5u7JH4OmYmuQ+XvjKm0Datg==}
     dev: true
@@ -983,7 +993,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.0-beta.3
+      vite: 4.4.0-beta.3(sass@1.66.1)
       vue: 3.3.4
     dev: true
 
@@ -994,7 +1004,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.7(@types/node@20.4.5)
+      vite: 4.4.7(@types/node@20.4.5)(sass@1.66.1)
       vue: 3.3.4
     dev: true
 
@@ -2385,6 +2395,10 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /immutable@4.3.2:
+    resolution: {integrity: sha512-oGXzbEDem9OOpDWZu88jGiYCvIsLHMvGw+8OXlpsvTFvIQplQbjg1B1cvKg8f7Hoch6+NGjpPsH1Fr+Mc2D1aA==}
+    dev: true
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -2772,6 +2786,13 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.0.3
       ufo: 1.1.2
+    dev: true
+
+  /mockjs@1.1.0:
+    resolution: {integrity: sha512-eQsKcWzIaZzEZ07NuEyO4Nw65g0hdWAyurVol1IPl1gahRwY+svqzfgfey8U8dahLwG44d6/RwEzuK52rSa/JQ==}
+    hasBin: true
+    dependencies:
+      commander: 10.0.1
     dev: true
 
   /ms@2.1.2:
@@ -3258,9 +3279,15 @@ packages:
       tslib: 2.6.0
     dev: true
 
-  /sass@0.4.0:
-    resolution: {integrity: sha512-IfEhs55pmnOBKI8e4vosJT30H6liImRDwAyuqYQ5haYJzuqEM3oqLgntqBnlBhe7uQidsbBLuxu/frTIHt5oAQ==}
-    dev: false
+  /sass@1.66.1:
+    resolution: {integrity: sha512-50c+zTsZOJVgFfTgwwEzkjA3/QACgdNsKueWPyAR0mRINIvLAStVQBbPg14iuqEQ74NPDbXzJARJ/O4SI1zftA==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.2
+      source-map-js: 1.0.2
+    dev: true
 
   /search-insights@2.7.0:
     resolution: {integrity: sha512-GLbVaGgzYEKMvuJbHRhLi1qoBFnjXZGZ6l4LxOYPCp4lI2jDRB3jPU9/XNhMwv6kvnA9slTreq6pvK+b3o3aqg==}
@@ -3675,7 +3702,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-node@0.33.0(@types/node@20.4.5):
+  /vite-node@0.33.0(@types/node@20.4.5)(sass@1.66.1):
     resolution: {integrity: sha512-19FpHYbwWWxDr73ruNahC+vtEdza52kA90Qb3La98yZ0xULqV8A5JLNPUff0f5zID4984tW7l3DH2przTJUZSw==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -3685,18 +3712,19 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.7(@types/node@20.4.5)
+      vite: 4.4.7(@types/node@20.4.5)(sass@1.66.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
       - lightningcss
+      - sass
       - stylus
       - sugarss
       - supports-color
       - terser
     dev: true
 
-  /vite@4.4.0-beta.3:
+  /vite@4.4.0-beta.3(sass@1.66.1):
     resolution: {integrity: sha512-IC/thYTvArOFRJ4qvvudnu4KKZOVc+gduS3I9OfC5SbP/Rf4kkP7z6Of2QpKeOSVqwIK24khW6VOUmVD/0yzSQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3727,11 +3755,12 @@ packages:
       esbuild: 0.18.15
       postcss: 8.4.27
       rollup: 3.26.3
+      sass: 1.66.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
 
-  /vite@4.4.7(@types/node@20.4.5):
+  /vite@4.4.7(@types/node@20.4.5)(sass@1.66.1):
     resolution: {integrity: sha512-6pYf9QJ1mHylfVh39HpuSfMPojPSKVxZvnclX1K1FyZ1PXDOcLBibdq5t1qxJSnL63ca8Wf4zts6mD8u8oc9Fw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3763,11 +3792,12 @@ packages:
       esbuild: 0.18.15
       postcss: 8.4.27
       rollup: 3.26.3
+      sass: 1.66.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress@1.0.0-beta.5(@algolia/client-search@4.19.1)(axios@1.4.0)(search-insights@2.7.0):
+  /vitepress@1.0.0-beta.5(@algolia/client-search@4.19.1)(axios@1.4.0)(sass@1.66.1)(search-insights@2.7.0):
     resolution: {integrity: sha512-/RjqqRsSEKkzF6HhK5e5Ij+bZ7ETb9jNCRRgIMm10gJ+ZLC3D1OqkE465lEqCeJUgt2HZ6jmWjDqIBfrJSpv7w==}
     hasBin: true
     dependencies:
@@ -3782,7 +3812,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.1.0
       shiki: 0.14.3
-      vite: 4.4.0-beta.3
+      vite: 4.4.0-beta.3(sass@1.66.1)
       vue: 3.3.4
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -3802,6 +3832,7 @@ packages:
       - qrcode
       - react
       - react-dom
+      - sass
       - search-insights
       - sortablejs
       - stylus
@@ -3810,7 +3841,7 @@ packages:
       - universal-cookie
     dev: true
 
-  /vitest@0.33.0:
+  /vitest@0.33.0(sass@1.66.1):
     resolution: {integrity: sha512-1CxaugJ50xskkQ0e969R/hW47za4YXDUfWJDxip1hwbnhUjYolpfUn2AMOulqG/Dtd9WYAtkHmM/m3yKVrEejQ==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -3862,12 +3893,13 @@ packages:
       strip-literal: 1.0.1
       tinybench: 2.5.0
       tinypool: 0.6.0
-      vite: 4.4.7(@types/node@20.4.5)
-      vite-node: 0.33.0(@types/node@20.4.5)
+      vite: 4.4.7(@types/node@20.4.5)(sass@1.66.1)
+      vite-node: 0.33.0(@types/node@20.4.5)(sass@1.66.1)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
       - lightningcss
+      - sass
       - stylus
       - sugarss
       - supports-color
