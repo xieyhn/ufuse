@@ -30,3 +30,12 @@ export function getSegmentsByWeatherMain(main: WeatherMain): [number, number] {
       return [40, 87]
   }
 }
+
+export function getScale(main: WeatherMain): number {
+  switch (main) {
+    case 'sunny':
+      return 1.48
+    default:
+      return 1
+  }
+}
