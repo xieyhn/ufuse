@@ -7,6 +7,8 @@
 
 img {
   display: block;
+  /* 禁止拖拽 */
+  -webkit-user-drag: none;
 }
 
 button {
