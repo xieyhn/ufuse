@@ -5,6 +5,7 @@ import Chance from 'chance'
 
 const chance = new Chance()
 const list = ref(Array.from({ length: 10 }, () => createRowData()))
+const list2 = ref(Array.from({ length: 10 }, () => createRowData()))
 
 function handleNext() {
   return [createRowData()]
@@ -19,13 +20,23 @@ function createRowData() {
 </script>
 
 <template>
-  <div class="demo">
+  <div class="demo flex">
     <InfiniteSwipe
       v-model="list"
-      class="h-[300px]"
+      class="flex-1 h-[300px]"
       :on-more="handleNext"
     >
-      <div v-for="item in list" :key="item.id" class="h-[30px]">
+      <div v-for="item in list" :key="item.id" class="h-[30px] leading-[30px]">
+        {{ item.label }}
+      </div>
+    </InfiniteSwipe>
+    <InfiniteSwipe
+      v-model="list2"
+      :interval="1000"
+      class="flex-1 h-[300px]"
+      :on-more="handleNext"
+    >
+      <div v-for="item in list2" :key="item.id" class="h-[30px] leading-[30px]">
         {{ item.label }}
       </div>
     </InfiniteSwipe>

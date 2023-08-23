@@ -8,15 +8,15 @@ InfiniteSwipe 组件可以实现一个列表无限加载数据并向上滑动展
 
 <Dependencies deps="gsap" />
 
-## 使用
-
-<<< ./Demo.vue
-
 ## 预览
 
 <ClientOnly>
   <Demo />
 </ClientOnly>
+
+## 使用
+
+<<< ./Demo.vue
 
 ## API
 

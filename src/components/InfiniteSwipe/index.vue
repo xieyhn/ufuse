@@ -17,37 +17,35 @@ let delayTween: gsap.core.Tween | null = null
 let moveTween: gsap.core.Tween | null = null
 
 function handleSwipe() {
+  if (!mounted)
+    return
   const rowHeight = (container.value!.children[0] as HTMLElement)?.offsetHeight ?? 0
-
-  delayTween = gsap.delayedCall(props.interval / 1000, () => {
+  delayTween = gsap.delayedCall(props.interval / 1000, async () => {
     const willPushRows = props.onMore()
     const len = willPushRows.length
-
     if (len === 0) {
       handleSwipe()
       return
     }
-
     emit('update:modelValue', [...props.modelValue, ...willPushRows])
-
     // 等待 DOM 更新
-    nextTick(() => {
-      if (!mounted)
-        return
+    await nextTick()
+    if (!mounted)
+      return
       // 容器整体上移
-      emit('swipe')
-      moveTween = gsap.to(container.value!, {
-        y: -rowHeight * len,
-        duration: props.duration / 1000,
-        ease: 'none',
-        onComplete: () => {
-          // 移除上移出去的元素
-          emit('update:modelValue', props.modelValue.slice(len))
-          // 将容器位置重置
-          gsap.set(container.value!, { y: 0 })
-          handleSwipe()
-        },
-      })
+    emit('swipe')
+    moveTween = gsap.to(container.value!, {
+      y: -rowHeight * len,
+      duration: props.duration / 1000,
+      ease: 'none',
+      onComplete: () => {
+        // 移除上移出去的元素
+        emit('update:modelValue', props.modelValue.slice(len))
+        // 将容器位置重置
+        gsap.set(container.value!, { y: 0 })
+
+        nextTick(handleSwipe)
+      },
     })
   })
 }
