@@ -4,7 +4,7 @@ UFUse 是一个基于 Vue 的代码仓库，它包含了一些常用的组件、
 
 在编写 UFUse 时，默认也是基于 Vite 构建工具的，因此在使用其它构建工具时，可能会出现不适配的情况。
 
-使用 UFUse 需要的依赖项：<Dependencies :show-label="false" deps="vue,sass,@vueuse/core" />，除此之外每个组件、指令、hooks、工具函数等都有自己的依赖项，会在对应的文档中说明。
+使用 UFUse 需要的依赖项：<Dependencies :show-label="false" deps="vue,sass,@vueuse/core" />，除此之外每个组件、指令、hooks、工具函数等都有可能自己的依赖项，会在对应的文档中说明。
 
 ## 安装
 
