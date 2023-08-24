@@ -1,10 +1,23 @@
 import type { preloadAssetsOptions } from './types'
 
+interface ImageModule {
+  default: string
+}
+
 export default function preloadAssets(options: preloadAssetsOptions) {
   const task: Promise<void>[] = []
+  const images: string[] = options.images ?? []
 
-  if (options.images) {
-    options.images.forEach((i) => {
+  if (options.globImages) {
+    images.push(
+      ...Object
+        .entries(import.meta.glob(options.globImages, { eager: true }))
+        .map(([, module]) => (module as ImageModule).default),
+    )
+  }
+
+  if (images.length) {
+    images.forEach((i) => {
       task.push(new Promise<void>((resolve) => {
         const img = new Image()
         img.src = i
