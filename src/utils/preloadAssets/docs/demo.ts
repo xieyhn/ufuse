@@ -1,11 +1,21 @@
 import preloadAssets from 'ufuse/src/utils/preloadAssets'
 
+interface ImageModule {
+  default: string
+}
+
 const ready = preloadAssets({
   images: [
-    '/images/a.png',
-  ],
-  globImages: [
-    '@/assets/images/*.png',
+    ...Object.entries(
+      import.meta.glob(
+        [
+          '@/assets/images/menus/**/*',
+          '@/assets/images/modules/**/*',
+        ],
+        { eager: true },
+      ),
+    )
+      .map(([, module]) => (module as ImageModule).default),
   ],
   fonts: [
     ['FontA', '/FontA.ttf'],
