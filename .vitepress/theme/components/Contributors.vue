@@ -19,7 +19,6 @@ const items = computed<Contributor[]>(() => {
 <template>
   <div class="flex flex-wrap gap-4 pt-2">
     <div v-for="i of items" :key="i.name" class="flex gap-2 items-center">
-      <img :src="`http://www.gravatar.com/avatar/${i.hash}?s=72&d=identicon`" class="w-8 h-8 rounded-full">
       {{ i.name }}
     </div>
   </div>
