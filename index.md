@@ -11,7 +11,7 @@ UFUse 是一个基于 Vue 的代码仓库，它包含了一些常用的组件、
 以 pnpm 为例，可以通过以下命令安装 `tag` 为 `1.0.0` 的 UFUse：
 
 ```bash
-pnpm install 'git+http://192.168.0.41/xieyuhang/ufuse.git#1.0.0'
+pnpm install 'git+https://gitee.com/ufrontend/ufuse.git#1.0.0'
 ```
 
 或是在后面的使用中 UFUse 发生了更新，在 package.json 中重新修改 `tag` 再运行 `pnpm install` 即可，如从 `1.0.0` 更新到 `1.0.1`：
@@ -19,8 +19,8 @@ pnpm install 'git+http://192.168.0.41/xieyuhang/ufuse.git#1.0.0'
 ```diff
 {
   "dependencies": {
--    "ufuse": "git+http://192.168.0.41/xieyuhang/ufuse.git#1.0.0"
-+    "ufuse": "git+http://192.168.0.41/xieyuhang/ufuse.git#1.0.1"
+-    "ufuse": "git+https://gitee.com/ufrontend/ufuse.git#1.0.0"
++    "ufuse": "git+https://gitee.com/ufrontend/ufuse.git#1.0.1"
   }
 }
 ```
