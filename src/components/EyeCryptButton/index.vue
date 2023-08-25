@@ -17,13 +17,75 @@ const frame = { v: 0 }
 let animation: AnimationItem | null = null
 let tween: gsap.core.Tween | null = null
 
+// 判断是否是十六进制颜色
+function isHexColor(color: string) {
+  const hexColorRegex = /^#?([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/
+  return hexColorRegex.test(color)
+}
+
+// rgba转换成 0 - 1
+function rgbaTo01(rgba: string) {
+  const rgbaArr = rgba.trim().split(',')
+  if (rgbaArr.length !== 4)
+    throw new Error('颜色值格式不正确')
+
+  const r = Number.parseInt(rgbaArr[0].split('(')[1].trim())
+  const g = Number.parseInt(rgbaArr[1].trim())
+  const b = Number.parseInt(rgbaArr[2].trim())
+  if (Number.isNaN(r) || Number.isNaN(g) || Number.isNaN(b))
+    throw new Error('颜色值格式不正确')
+
+  let alpha = Number.parseFloat(rgbaArr[3].trim()) as any
+  if (Number.isNaN(alpha))
+    throw new Error('颜色值格式不正确')
+
+  const r01 = r / 255
+  const g01 = g / 255
+  const b01 = b / 255
+  if (alpha < 0 || alpha > 1)
+    alpha = 1
+
+  return [r01, g01, b01, alpha]
+}
+
+// 十六进制转换成rgba颜色
+function hexToRGBA(hex: string) {
+  if (hex.length === 4)
+    hex = `#${hex[1]}${hex[1]}${hex[2]}${hex[2]}${hex[3]}${hex[3]}`
+
+  const r = Number.parseInt(hex.slice(1, 3), 16)
+  const g = Number.parseInt(hex.slice(3, 5), 16)
+  const b = Number.parseInt(hex.slice(5, 7), 16)
+  return `rgba(${r}, ${g}, ${b}, 1)`
+}
+
 onMounted(() => {
+  const json = JSON.parse(JSON.stringify(animationData)) as any
+
+  if (props.color) {
+    let color = [] as any
+    if (isHexColor(props.color)) {
+      color = rgbaTo01(hexToRGBA(props.color))
+    }
+    else {
+      try {
+        color = rgbaTo01(props.color)
+      }
+      catch (error: any) {
+        console.error(error.message)
+      }
+    }
+    json.layers.forEach((e: any) => {
+      e.shapes[0].it[1].c.k = color
+    })
+  }
+
   animation = Lottie.loadAnimation({
     container: container.value!,
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    animationData,
+    animationData: json,
   })
 
   if (props.crypt)

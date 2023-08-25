@@ -8,6 +8,12 @@ export interface EyeCryptButtonProps {
    * @default 300
    */
   duration?: number
+  /**
+   * 颜色，rgba或十六进制颜色
+   * @example 'rgba(255, 0, 0, 1)'
+   * @example '#000'
+   */
+  color?: string
 }
 
 export interface EyeCryptButtonEvents {
