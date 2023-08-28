@@ -10,7 +10,7 @@ pnpm install https://gitee.com/ufrontend/ufuse.git#1.0.0
 
 ## 文档
 
-+ [使用文档] (http://ufuse.uf.cn/)
++ [使用文档](http://ufuse.uf.cn/)
 + [参与贡献](http://ufuse.uf.cn/development.html)
 
 ## LICENSE
