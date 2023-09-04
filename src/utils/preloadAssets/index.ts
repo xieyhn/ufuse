@@ -24,5 +24,5 @@ export default function preloadAssets(options: preloadAssetsOptions) {
     })
   }
 
-  return Promise.all(task)
+  return Promise.allSettled(task)
 }
