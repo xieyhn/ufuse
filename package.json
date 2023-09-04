@@ -1,6 +1,6 @@
 {
   "name": "ufuse",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Vue Hooks and Components for UFrontend",
   "private": true,
   "packageManager": "pnpm@8.5.1",
