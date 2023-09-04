@@ -3,16 +3,24 @@ import LottieView from 'ufuse/src/components/LottieView/index.vue'
 import { getScale, getSegmentsByWeatherMain, loadIconAnimationData } from './resources'
 import type { LoadWeatherInfoOptions, WeatherInfo, WeatherMain } from './types'
 
-async function fetchWeatherInfo(key: string, adcode?: string): Promise<any> {
-  if (typeof adcode === 'undefined')
-    adcode = await fetch(`https://restapi.amap.com/v3/ip?key=${key}`).then<any>(res => res.json()).then(res => res.adcode)
+async function fetchWeatherInfo(key: string, adcode?: string, feedbackAdcode?: string): Promise<any> {
+  if (typeof adcode === 'undefined') {
+    adcode = await fetch(`https://restapi.amap.com/v3/ip?key=${key}`)
+      .then<any>(res => res.json())
+      .then((res) => {
+        if (!res || !res.adcode)
+          throw new Error('Failed to fetch adcode')
+        return res.adcode
+      })
+      .catch(() => feedbackAdcode)
+  }
 
   return await fetch(`https://restapi.amap.com/v3/weather/weatherInfo?key=${key}&city=${adcode}&extensions=all`)
     .then(res => res.json())
 }
 
 async function loadWeatherInfo(options: LoadWeatherInfoOptions): Promise<WeatherInfo> {
-  const result = await fetchWeatherInfo(options.amapKey, options.adcode)
+  const result = await fetchWeatherInfo(options.amapKey, options.adcode, options.feedbackAdcode)
 
   if (result?.info !== 'OK')
     throw new Error('Failed to fetch weather info')

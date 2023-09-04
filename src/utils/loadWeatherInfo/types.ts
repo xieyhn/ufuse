@@ -10,6 +10,10 @@ export interface LoadWeatherInfoOptions {
    * @default '页面打开时 IP 对应的城市'
    */
   adcode?: string
+  /**
+   * 在通过获取 IP 对应的城市失败时，使用的默认城市
+   */
+  feedbackAdcode?: string
 }
 
 export type WeatherMain = 'sunny' | 'cloudy' | 'thunderstorm' | 'snow' | 'rain'
