@@ -10,9 +10,9 @@ outline: deep
 
 ### ESLint
 
-项目使用 [ESLint](https://eslint.org/) 作为代码规范检查工具，配置文件为 `.eslintrc`，建议在开发时使用 VSCode 并安装 ESLint 插件，该插件可以实时检查代码规范并给出提示。
+项目使用 [ESLint](https://eslint.org/) 作为代码规范检查工具，配置文件为 `.eslintrc`，建议在开发时使用 VSCode 并安装 [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 插件，该插件可以实时检查代码规范并给出提示。
 
-也可以添加以下配置到 VSCode 的 `settings.json` 中，以便在文件保存时自动修复一些简单的规范问题：
+:wave: 通过添加以下配置到 VSCode 的 `settings.json` 中，可以在文件编辑后保存时自动修复一些简单的规范问题：
 
 ```json
 {
@@ -25,7 +25,7 @@ outline: deep
 
 ### tailwindcss
 
-项目使用 [tailwindcss](https://tailwindcss.com/) 作为 CSS 框架，配置文件为 `tailwind.config.js`，建议在开发时使用 VSCode 并安装 Tailwind CSS IntelliSense 插件，该插件可以实时提示 tailwindcss 的类名。
+项目使用 [tailwindcss](https://tailwindcss.com/) 作为 CSS 框架，配置文件为 `tailwind.config.js`，建议在开发时使用 VSCode 并安装 [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 插件，该插件可以实时提示 tailwindcss 的类名。
 
 ::: warning
 注意这只应该使用在跟文档编写工作相关的 css 上，如 Demo 组件中的 css
@@ -33,15 +33,17 @@ outline: deep
 而不应该在实际对外暴露的组件的 css 中使用，因为在你的宿主项目中不一定安装了 tailwindcss，这样会导致你的组件在宿主项目中无法正常使用。
 :::
 
-### SCSS
+### Scss
 
-Vue 组件中可以直接使用 scss 语法。
+在 Vue 组件（无论是对外暴露的组件还是文档编写工作的 Demo 组件）中可以直接使用 Scss 语法。
 
 ### Test
 
 项目使用 [vitest](https://vitest.dev/) 作为测试框架，配置文件为 `vite.config.ts`，通过 `pnpm run test` 命令来运行测试。
 
 ## 参与贡献
+
+<!-- TODO: 增加仓库 fork 流程 -->
 
 为了相对保证仓库的主分支 main 分支稳定，main 分支不允许直接推送，在新增功能或 fix bug 时应新建自己对应处理的分支，例如 `feat/your-feature` 或 `fix/your-bug`，在完成开发后，通过 Pull Request 的方式（下有介绍）提交到 main 分支，在经过确认后合并到 main 分支。
 
@@ -87,11 +89,9 @@ Vue 组件中可以直接使用 scss 语法。
 
 ## 开发约定
 
-+ 尽量保证不出现单词拼写错误（可以使用 VSCode Code Spell Checker 插件）。
++ 尽量保证不出现单词拼写错误（可以使用 VSCode Code [Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) 插件）。
 + 尽量符合项目的代码编写规范（通过 ESLint）。
 + 尽量保证代码可复用性及可扩展性。
 + 在 API 设计时，尽可能保证参数名称的语义化，可参考 Vue、Element UI、VueUse 等的 API 设计。
 + 在涉及到时间相关参数时，使用**毫秒**作为单位，并在文档描述中说明。
-+ Vue 组件的目录名、文件名、组件名均使用大驼峰命名法（除目录下的 index.vue 外）。
-+ Vue 指令目录使用小驼峰命名法。
-+ Vue Hooks 目录使用小驼峰命名法。
++ 文件命名规范参考现存的文件命名。
