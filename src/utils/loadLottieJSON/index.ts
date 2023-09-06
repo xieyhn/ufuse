@@ -1,4 +1,4 @@
-function loadLottieJSON(records: Record<string, unknown>) {
+export function loadLottieJSON(records: Record<string, unknown>) {
   const files = Object.keys(records)
   const modules = files.map(key => records[key])
 

@@ -20,4 +20,6 @@ function combine<T extends any[]>(...arrays: T[]): T[] {
   return result
 }
 
+export { combine }
+
 export default combine

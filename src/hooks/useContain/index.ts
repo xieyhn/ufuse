@@ -1,7 +1,7 @@
 import { onBeforeUnmount, onMounted, ref, watchEffect } from 'vue'
 import type { UseContainOptions } from './types'
 
-export default function useContain({ el, designWidth, designHeight }: UseContainOptions) {
+export function useContain({ el, designWidth, designHeight }: UseContainOptions) {
   const scale = ref(1)
   const designRatio = designWidth / designHeight
   let resizeObserver: ResizeObserver | null = null
@@ -42,3 +42,5 @@ export default function useContain({ el, designWidth, designHeight }: UseContain
     resizeObserver?.disconnect()
   })
 }
+
+export default useContain

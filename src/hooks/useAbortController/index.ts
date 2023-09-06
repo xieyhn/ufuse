@@ -1,4 +1,4 @@
-export default function useAbortController() {
+export function useAbortController() {
   let oldAbortController: AbortController | null = null
 
   const ac = {
@@ -12,3 +12,5 @@ export default function useAbortController() {
 
   return ac
 }
+
+export default useAbortController

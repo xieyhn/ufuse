@@ -1,6 +1,6 @@
 import toNumber from 'ufuse/src/utils/toNumber'
 
-export default function formatNumber(val: number | string | undefined, fractionDigits = 2) {
+export function formatNumber(val: number | string | undefined, fractionDigits = 2) {
   if (typeof val === 'undefined')
     return ''
   if (typeof val === 'string')
@@ -10,3 +10,5 @@ export default function formatNumber(val: number | string | undefined, fractionD
   decimal = decimal.slice(0, fractionDigits).padEnd(fractionDigits, '0')
   return `${Number(integer).toLocaleString('zh')}${decimal ? `.${decimal}` : ''}`
 }
+
+export default formatNumber

@@ -1,3 +1,5 @@
-export default function ensureArray<T>(arg: T | T[]): T[] {
+export function ensureArray<T>(arg: T | T[]): T[] {
   return Array.isArray(arg) ? arg : [arg]
 }
+
+export default ensureArray
