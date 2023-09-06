@@ -1,6 +1,6 @@
 import type { preloadAssetsOptions } from './types'
 
-export default function preloadAssets(options: preloadAssetsOptions) {
+export function preloadAssets(options: preloadAssetsOptions) {
   const task: Promise<void>[] = []
 
   if (options.images) {
@@ -26,3 +26,5 @@ export default function preloadAssets(options: preloadAssetsOptions) {
 
   return Promise.allSettled(task)
 }
+
+export default preloadAssets

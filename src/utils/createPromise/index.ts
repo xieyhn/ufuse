@@ -1,4 +1,4 @@
-export default function createPromise<T>() {
+export function createPromise<T>() {
   let resolve!: (value: T | PromiseLike<T>) => void
   let reject!: (reason?: any) => void
 
@@ -13,3 +13,5 @@ export default function createPromise<T>() {
     reject,
   }
 }
+
+export default createPromise

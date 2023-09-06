@@ -4,7 +4,7 @@ import type { VPullOptions } from './types'
 
 const TweenKey = Symbol('v-pull.tween-key')
 
-const vPull: Directive<HTMLElement, VPullOptions> = {
+export const vPull: Directive<HTMLElement, VPullOptions> = {
   mounted(el, binding) {
     const { delay, direction = 'l2r', duration = 1000 } = binding.value ?? {}
 

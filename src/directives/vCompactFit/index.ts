@@ -26,7 +26,7 @@ function applyCompactFit(el: HTMLElement, compactWidthPX: number) {
     el.style.transform = `scale(${scale})`
 }
 
-const vCompactFit: FunctionDirective<HTMLElement, vCompactFitOptions> = (el, binding) => {
+export const vCompactFit: FunctionDirective<HTMLElement, vCompactFitOptions> = (el, binding) => {
   const { compactWidth = '100%' } = binding.value ?? {}
 
   applyCompactFit(el, getCompactWidthPX(el, compactWidth))

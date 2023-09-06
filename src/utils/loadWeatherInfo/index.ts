@@ -19,7 +19,7 @@ async function fetchWeatherInfo(key: string, adcode?: string, feedbackAdcode?: s
     .then(res => res.json())
 }
 
-async function loadWeatherInfo(options: LoadWeatherInfoOptions): Promise<WeatherInfo> {
+export async function loadWeatherInfo(options: LoadWeatherInfoOptions): Promise<WeatherInfo> {
   const result = await fetchWeatherInfo(options.amapKey, options.adcode, options.feedbackAdcode)
 
   if (result?.info !== 'OK')
