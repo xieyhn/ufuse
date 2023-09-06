@@ -12,7 +12,7 @@ async function appendContributors(id: string, raw: string) {
   const dirname = path.dirname(id)
 
   if (path.resolve(root) !== path.resolve(dirname))
-    file = dirname
+    file = path.resolve(dirname, '..')
 
   const { all } = await git.log({
     file,
