@@ -15,6 +15,11 @@ export interface InfiniteSwipeProps {
    */
   duration?: number
   /**
+   * 是否在 hover 容器时暂停滚动
+   * @default false
+   */
+  pauseOnHover?: boolean
+  /**
    * 加载更多数据
    */
   onMore: () => unknown[]

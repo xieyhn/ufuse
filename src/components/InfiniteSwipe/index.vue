@@ -50,6 +50,20 @@ function handleSwipe() {
   })
 }
 
+function handleMouseEnter() {
+  if (!props.disabled && props.pauseOnHover) {
+    moveTween?.pause()
+    delayTween?.pause()
+  }
+}
+
+function handleMouseLeave() {
+  if (!props.disabled && props.pauseOnHover && moveTween?.paused()) {
+    moveTween?.play()
+    delayTween?.play()
+  }
+}
+
 onMounted(() => {
   mounted = true
   watch(
@@ -57,7 +71,6 @@ onMounted(() => {
     () => {
       if (!delayTween)
         handleSwipe()
-
       if (props.disabled)
         delayTween?.pause()
       else
@@ -77,7 +90,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="infinite-swipe">
-    <div ref="container">
+    <div ref="container" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
       <slot />
     </div>
   </div>

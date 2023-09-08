@@ -24,6 +24,7 @@ function createRowData() {
     <InfiniteSwipe
       v-model="list"
       class="flex-1 h-[300px]"
+      pause-on-hover
       :on-more="handleNext"
     >
       <div v-for="item in list" :key="item.id" class="h-[30px] leading-[30px]">
