@@ -28,6 +28,8 @@ export function useContain({ el, designWidth, designHeight }: UseContainOptions)
         el.value.style.left = '50%'
         el.value.style.top = '50%'
         el.value.style.transform = `translate(-50%, -50%) scale(${scale.value})`
+        // 若通过 gsap 读取过该元素的属性，会在元素上留下缓存，且在上述样式更改后不会更新缓存
+        Reflect.deleteProperty(el.value, '_gsap')
       }
     })
 
