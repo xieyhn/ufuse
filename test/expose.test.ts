@@ -18,7 +18,6 @@ import * as formatNumber from 'ufuse/src/utils/formatNumber'
 import * as ensureArray from 'ufuse/src/utils/ensureArray'
 import * as preloadAssets from 'ufuse/src/utils/preloadAssets'
 import * as createPromise from 'ufuse/src/utils/createPromise'
-import * as alignLottieAnimateElementsFrames from 'ufuse/src/utils/alignLottieAnimateElementsFrames'
 
 describe('ufuse', () => {
   it('expose', () => {
@@ -54,7 +53,5 @@ describe('ufuse', () => {
     expect(preloadAssets.preloadAssets).toBeDefined()
     expect(createPromise.default).toBeDefined()
     expect(createPromise.createPromise).toBeDefined()
-    expect(alignLottieAnimateElementsFrames.default).toBeDefined()
-    expect(alignLottieAnimateElementsFrames.alignLottieAnimateElementsFrames).toBeDefined()
   })
 })
